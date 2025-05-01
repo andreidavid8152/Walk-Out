@@ -115,20 +115,23 @@ def mapa():
     df_carr = df_carr[df_carr["AÑO"] == 2023]
     uni_to_carr = df_carr.groupby("UNIVERSIDAD")["CARRERA"].apply(list).to_dict()
 
-    layer_uni = folium.FeatureGroup(name="Universidades", show=True).add_to(m)
-    for _, row in df_uni.iterrows():
-        uni = row["UNIVERSIDAD"]
-        folium.Marker(
-            location=[row["LATITUD"], row["LONGITUD"]],
-            title=uni,  # para logging
-            tooltip=f"{uni} – {row['CAMPUS']}",
-            icon=folium.Icon(
-                color="red" if uni.upper() == "UNIVERSIDAD DE LAS AMERICAS" else "blue",
-                icon="university",
-                prefix="fa",
-            ),
-            careers=uni_to_carr.get(uni, []),  # lista carreras
-        ).add_to(layer_uni)
+    grupo_uni_fin = {"PUBLICA": [], "PRIVADA": []}
+    for tipo in ["PUBLICA", "PRIVADA"]:
+        fg = folium.FeatureGroup(name=f"Universidades {tipo.title()}").add_to(m)
+        grupo_uni_fin[tipo] = fg
+        for _, row in df_uni[df_uni["FINANCIAMIENTO"].str.upper() == tipo].iterrows():
+            uni = row["UNIVERSIDAD"]
+            folium.Marker(
+                location=[row["LATITUD"], row["LONGITUD"]],
+                title=uni,
+                tooltip=f"{uni} – {row['CAMPUS']}",
+                icon=folium.Icon(
+                    color="red" if uni.upper() == "UNIVERSIDAD DE LAS AMERICAS" else "blue",
+                    icon="university",
+                    prefix="fa",
+                ),
+                careers=uni_to_carr.get(uni, []),
+            ).add_to(fg)
 
     # 7. ---------------- Colegios por tipo --------------------
     df_col = pd.read_excel(EXCEL_PATH, sheet_name=SHEET_COL).rename(
@@ -158,20 +161,46 @@ def mapa():
             "select_all_checkbox": "Todos",
             "children": grupos_parroquia,
         },
-        {"label": "Universidades", "layer": layer_uni},
+        {
+            "label": "Universidades",
+            "select_all_checkbox": "Todas",
+            "children": [
+                {"label": "Públicas", "layer": grupo_uni_fin["PUBLICA"]},
+                {"label": "Privadas", "layer": grupo_uni_fin["PRIVADA"]},
+            ],
+        },
         {
             "label": "Colegios",
             "select_all_checkbox": "Todos",
             "children": colegios_grupos,
         },
     ]
+
     TreeLayerControl(overlay_tree=overlay_tree, collapsed=False).add_to(m)
 
-    # 9. ---------------- Facultades → carreras ----------------
-    facultades = {}
+    # 9. ---------------- NIVEL → Facultad → Carreras ----------------
+    facultades_por_nivel = {}
+
     for _, r in df_carr.iterrows():
-        facultades.setdefault(r["FACULTAD"].strip(), set()).add(r["CARRERA"].strip())
-    facultades = {fac: sorted(carr) for fac, carr in facultades.items()}
+        nivel = r["NIVEL"].strip().upper()
+        facultad = r["FACULTAD"].strip()
+        carrera = r["CARRERA"].strip()
+
+        if facultad.upper() == "NO COMPARABLE":
+            continue
+
+        if nivel not in facultades_por_nivel:
+            facultades_por_nivel[nivel] = {}
+
+        if facultad not in facultades_por_nivel[nivel]:
+            facultades_por_nivel[nivel][facultad] = set()
+
+        facultades_por_nivel[nivel][facultad].add(carrera)
+
+    # Convertir sets a listas ordenadas
+    for nivel in facultades_por_nivel:
+        for fac in facultades_por_nivel[nivel]:
+            facultades_por_nivel[nivel][fac] = sorted(facultades_por_nivel[nivel][fac])
 
     # 10. --------------- Render ------------------------------
     return render_template(
@@ -181,7 +210,7 @@ def mapa():
         periodos=periodos,
         selected_periodo=selected_periodo,
         now=datetime.datetime.now(),
-        facultades=facultades,
+        facultades=facultades_por_nivel,
     )
 
 

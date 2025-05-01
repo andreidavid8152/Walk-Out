@@ -55,23 +55,31 @@
     <div class="card">
       <div class="card-header py-2"><strong>Carreras 2023</strong></div>
       <div class="card-body">
-        {% for fac, carreras in facultades.items() %}
-          {% set idx = loop.index %}
+        {% for nivel, facultades in facultades.items() %}
           <details>
-            <summary>
-              <input type="checkbox" id="fac_{{ idx }}" onchange="toggleChildren('fac_{{ idx }}')">
-              <label for="fac_{{ idx }}">{{ fac }}</label>
-            </summary>
-            <ul>
-              {% for car in carreras %}
-              <li>
-                <input type="checkbox" class="child fac_{{ idx }}" id="car_{{ idx }}_{{ loop.index }}">
-                <label for="car_{{ idx }}_{{ loop.index }}">{{ car }}</label>
-              </li>
+            <summary><strong>{{ nivel.title() }}</strong></summary>
+            <div style="padding-left: 1rem;">
+              {% for fac, carreras in facultades.items() %}
+                {% set idx = loop.index0 %}
+                <details>
+                  <summary>
+                    <input type="checkbox" id="fac_{{ nivel }}_{{ idx }}" onchange="toggleChildren('fac_{{ nivel }}_{{ idx }}')">
+                    <label for="fac_{{ nivel }}_{{ idx }}">{{ fac }}</label>
+                  </summary>
+                  <ul>
+                    {% for car in carreras %}
+                    <li>
+                      <input type="checkbox" class="child fac_{{ nivel }}_{{ idx }}" id="car_{{ nivel }}_{{ idx }}_{{ loop.index }}">
+                      <label for="car_{{ nivel }}_{{ idx }}_{{ loop.index }}">{{ car }}</label>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </details>
               {% endfor %}
-            </ul>
+            </div>
           </details>
         {% endfor %}
+
       </div>
     </div>
   </div>
