@@ -7,17 +7,21 @@ import branca.colormap as cm
 import datetime
 from folium.plugins.treelayercontrol import TreeLayerControl
 import itertools
+import os
 
 app = Flask(__name__)
 
+# Ruta base del proyecto (donde está este archivo)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # ──────────────────────────── RUTAS / ARCHIVOS ────────────────────────────
-EXCEL_PATH = "data/universidades_colegios_2.xlsx"
+EXCEL_PATH = os.path.join(BASE_DIR, "data", "universidades_colegios_2.xlsx")
 SHEET_UNI = "Universidades"
 SHEET_COL = "Colegios"
-CSV_EST = "data/UbicacionEstudiantesPeriodo.csv"
-GJSON_RURAL = "data/parroquiasRurales.geojson"
-GJSON_URB = "data/parroquiasUrbanas.geojson"
-CARRERAS_PATH = "data/baseCarreras.xlsx"
+CSV_EST = os.path.join(BASE_DIR, "data", "UbicacionEstudiantesPeriodo.csv")
+GJSON_RURAL = os.path.join(BASE_DIR, "data", "parroquiasRurales.geojson")
+GJSON_URB = os.path.join(BASE_DIR, "data", "parroquiasUrbanas.geojson")
+CARRERAS_PATH = os.path.join(BASE_DIR, "data", "baseCarreras.xlsx")
 
 
 # ───────────────────────────────────────────────────────────────────────────
