@@ -4,4 +4,5 @@ geopandas
 folium
 branca
 shapely
+gunicorn
 openpyxl
