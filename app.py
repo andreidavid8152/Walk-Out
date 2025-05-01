@@ -154,6 +154,45 @@ def mapa():
                 icon=folium.Icon(color=color, icon="graduation-cap", prefix="fa"),
             ).add_to(fg)
 
+    # ---------------- Parques (GeoJSON) ----------------
+    gdf_parques = gpd.read_file(
+        "data/parques.geojson"
+    )  # cambia la ruta si es necesario
+    gdf_parques = gdf_parques.to_crs("EPSG:4326")  # asegurar CRS compatible
+
+    parques_fg = folium.FeatureGroup(name="Parques").add_to(m)
+
+    folium.GeoJson(
+        gdf_parques,
+        name="Parques",
+        style_function=lambda feature: {
+            "fillColor": "#b266ff",  # morado claro
+            "color": "#6a0dad",  # borde morado oscuro
+            "weight": 1,
+            "fillOpacity": 0.4,  # translúcido
+        },
+        tooltip=folium.GeoJsonTooltip(fields=["name"], aliases=["Parque:"]),
+    ).add_to(parques_fg)
+
+    # ---------------- Centros Comerciales (GeoJSON) ----------------
+    gdf_cc = gpd.read_file("data/centros_comerciales.geojson")  # ajusta ruta si es necesario
+    gdf_cc = gdf_cc.to_crs("EPSG:4326")
+
+    cc_fg = folium.FeatureGroup(name="Centros Comerciales").add_to(m)
+
+    folium.GeoJson(
+        gdf_cc,
+        name="Centros Comerciales",
+        style_function=lambda feature: {
+            "fillColor": "#222222",  # negro
+            "color": "#000000",      # borde negro
+            "weight": 1,
+            "fillOpacity": 0.5       # translúcido
+        },
+        tooltip=folium.GeoJsonTooltip(fields=["name"], aliases=["Centro Comercial:"]),
+    ).add_to(cc_fg)
+
+
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
         {
@@ -174,6 +213,15 @@ def mapa():
             "select_all_checkbox": "Todos",
             "children": colegios_grupos,
         },
+        {
+            "label": "Parques",
+            "layer": parques_fg
+        },
+        {
+            "label": "Centros Comerciales",
+            "layer": cc_fg
+        },
+
     ]
 
     TreeLayerControl(overlay_tree=overlay_tree, collapsed=False).add_to(m)
