@@ -5,3 +5,4 @@ folium
 branca
 shapely
 gunicorn ==21.2.0
+openpyxl
