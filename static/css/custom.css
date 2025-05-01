@@ -1,0 +1,9 @@
+#map iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
