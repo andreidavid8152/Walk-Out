@@ -1,0 +1,1742 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.49148189789261,
+                            -0.1045771808539557,
+                            0
+                        ],
+                        [
+                            -78.49045073735144,
+                            -0.1048852853324499,
+                            0
+                        ],
+                        [
+                            -78.48985827526216,
+                            -0.103727084570278,
+                            0
+                        ],
+                        [
+                            -78.48922419403976,
+                            -0.1027462510505317,
+                            0
+                        ],
+                        [
+                            -78.49032536420397,
+                            -0.1024138365395901,
+                            0
+                        ],
+                        [
+                            -78.4908507287008,
+                            -0.1026542873553652,
+                            0
+                        ],
+                        [
+                            -78.49108115540416,
+                            -0.1030099518380092,
+                            0
+                        ],
+                        [
+                            -78.49148189789261,
+                            -0.1045771808539557,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Condado Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F18",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0ED4D3724437C217761F"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48068326038668,
+                            -0.1756125853841777,
+                            0
+                        ],
+                        [
+                            -78.48079677870426,
+                            -0.1763974932268821,
+                            0
+                        ],
+                        [
+                            -78.47803939153329,
+                            -0.1769101096788085,
+                            0
+                        ],
+                        [
+                            -78.47783595456345,
+                            -0.1761939009422885,
+                            0
+                        ],
+                        [
+                            -78.47901353356657,
+                            -0.1759454387060237,
+                            0
+                        ],
+                        [
+                            -78.47890993467449,
+                            -0.1755277620038708,
+                            0
+                        ],
+                        [
+                            -78.48000830050374,
+                            -0.1752779834973061,
+                            0
+                        ],
+                        [
+                            -78.4800914320662,
+                            -0.1756959178030848,
+                            0
+                        ],
+                        [
+                            -78.48068326038668,
+                            -0.1756125853841777,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Quicentro Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F21",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0D71EF145B37C2195476"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.42568203833778,
+                            -0.2079323735271786,
+                            0
+                        ],
+                        [
+                            -78.42500603006573,
+                            -0.2079258690265211,
+                            0
+                        ],
+                        [
+                            -78.42491211818596,
+                            -0.207833567709792,
+                            0
+                        ],
+                        [
+                            -78.42485315856518,
+                            -0.2068058446624765,
+                            0
+                        ],
+                        [
+                            -78.42520912541345,
+                            -0.2065476711220548,
+                            0
+                        ],
+                        [
+                            -78.42530565038442,
+                            -0.2066648641196616,
+                            0
+                        ],
+                        [
+                            -78.4264161417563,
+                            -0.2059771626807003,
+                            0
+                        ],
+                        [
+                            -78.42704679559637,
+                            -0.2069723844925191,
+                            0
+                        ],
+                        [
+                            -78.42568203833778,
+                            -0.2079323735271786,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Scala Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F23",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0931C9CABB37C21A1E2C"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.44527011108812,
+                            -0.1810587951312688,
+                            0
+                        ],
+                        [
+                            -78.44522253047859,
+                            -0.1813592578994145,
+                            0
+                        ],
+                        [
+                            -78.44497459006442,
+                            -0.1817665691127699,
+                            0
+                        ],
+                        [
+                            -78.44418145246766,
+                            -0.1815050140771279,
+                            0
+                        ],
+                        [
+                            -78.44424464975121,
+                            -0.180801588518424,
+                            0
+                        ],
+                        [
+                            -78.44445273090628,
+                            -0.1806432879287389,
+                            0
+                        ],
+                        [
+                            -78.44527011108812,
+                            -0.1810587951312688,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Plaza del rancho",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F19",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0B805B7AAC37C21B086C"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48580073945413,
+                            -0.1989382458692333,
+                            0
+                        ],
+                        [
+                            -78.48600221281335,
+                            -0.1994533058682349,
+                            0
+                        ],
+                        [
+                            -78.48512469236005,
+                            -0.1999011665996821,
+                            0
+                        ],
+                        [
+                            -78.48481242976037,
+                            -0.199384691444969,
+                            0
+                        ],
+                        [
+                            -78.48580073945413,
+                            -0.1989382458692333,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Multicentro Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F6",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0F19A80DFC37C21BC71C"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48764874762381,
+                            -0.1881861569860065,
+                            0
+                        ],
+                        [
+                            -78.48798252081735,
+                            -0.1900984169763869,
+                            0
+                        ],
+                        [
+                            -78.4877895677851,
+                            -0.190160409830126,
+                            0
+                        ],
+                        [
+                            -78.48749299323525,
+                            -0.190771431175342,
+                            0
+                        ],
+                        [
+                            -78.48671284075951,
+                            -0.1902030600318625,
+                            0
+                        ],
+                        [
+                            -78.48764874762381,
+                            -0.1881861569860065,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "El Jardín",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F17",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "03CC40804A37C21D28E3"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.49297297623026,
+                            -0.1745561478590394,
+                            0
+                        ],
+                        [
+                            -78.49306173613971,
+                            -0.1749693723336447,
+                            0
+                        ],
+                        [
+                            -78.49263680805505,
+                            -0.1759248363095058,
+                            0
+                        ],
+                        [
+                            -78.49219820874428,
+                            -0.175744224525457,
+                            0
+                        ],
+                        [
+                            -78.49212688937902,
+                            -0.1747580661049533,
+                            0
+                        ],
+                        [
+                            -78.49297297623026,
+                            -0.1745561478590394,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Plaza de las Americas",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F15",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0CA7A46EA037C21DF18E"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.5002737477395,
+                            -0.2037599903776402,
+                            0
+                        ],
+                        [
+                            -78.49954337825042,
+                            -0.204026712729606,
+                            0
+                        ],
+                        [
+                            -78.49918431031314,
+                            -0.2030292375057703,
+                            0
+                        ],
+                        [
+                            -78.49998051969402,
+                            -0.2027295518030888,
+                            0
+                        ],
+                        [
+                            -78.5002737477395,
+                            -0.2037599903776402,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Centro Comercial Artesanal Quitus",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F22",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "069909F57937C21EE478"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48553082012032,
+                            -0.1760633840511929,
+                            0
+                        ],
+                        [
+                            -78.48596019510688,
+                            -0.178648190601477,
+                            0
+                        ],
+                        [
+                            -78.4846320069092,
+                            -0.178862468647738,
+                            0
+                        ],
+                        [
+                            -78.48391136278758,
+                            -0.1769802044976927,
+                            0
+                        ],
+                        [
+                            -78.48383735903532,
+                            -0.1763810439586879,
+                            0
+                        ],
+                        [
+                            -78.48553082012032,
+                            -0.1760633840511929,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "CCI",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F11",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0B103E7D3037C21FE453"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48627104305552,
+                            -0.1759157132214815,
+                            0
+                        ],
+                        [
+                            -78.48638141764219,
+                            -0.1765738148627127,
+                            0
+                        ],
+                        [
+                            -78.48584256468847,
+                            -0.1766540692205301,
+                            0
+                        ],
+                        [
+                            -78.48577315734612,
+                            -0.1761973132357668,
+                            0
+                        ],
+                        [
+                            -78.48597372582915,
+                            -0.175921016536283,
+                            0
+                        ],
+                        [
+                            -78.48627104305552,
+                            -0.1759157132214815,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Caracol",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F8",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "083276A7DE37C2205D17"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48639351562981,
+                            -0.1766364624706736,
+                            0
+                        ],
+                        [
+                            -78.4865026386699,
+                            -0.1772488309487259,
+                            0
+                        ],
+                        [
+                            -78.48595168601928,
+                            -0.1773079123902855,
+                            0
+                        ],
+                        [
+                            -78.4858587412306,
+                            -0.1767383463621389,
+                            0
+                        ],
+                        [
+                            -78.48639351562981,
+                            -0.1766364624706736,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Unicornio",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F14",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "016D8C7E1837C2212E99"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48473429399722,
+                            -0.1748138025194882,
+                            0
+                        ],
+                        [
+                            -78.48486134322087,
+                            -0.1757225223820557,
+                            0
+                        ],
+                        [
+                            -78.48379432171936,
+                            -0.1759111834386276,
+                            0
+                        ],
+                        [
+                            -78.48361977855808,
+                            -0.1750629450034462,
+                            0
+                        ],
+                        [
+                            -78.48473429399722,
+                            -0.1748138025194882,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "CCNU",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F26",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "053889BEE437C2218CB4"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.5141706759281,
+                            -0.2189312359594252,
+                            0
+                        ],
+                        [
+                            -78.51394354501393,
+                            -0.2186524455829751,
+                            0
+                        ],
+                        [
+                            -78.51422495383953,
+                            -0.2183644453503641,
+                            0
+                        ],
+                        [
+                            -78.51449966201238,
+                            -0.2186250280554345,
+                            0
+                        ],
+                        [
+                            -78.5141706759281,
+                            -0.2189312359594252,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Granada",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F24",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "02E14B450A37C222FD7C"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.54325197690542,
+                            -0.2866661564434532,
+                            0
+                        ],
+                        [
+                            -78.54224857056836,
+                            -0.2872814593640587,
+                            0
+                        ],
+                        [
+                            -78.54175709383523,
+                            -0.2865552495241171,
+                            0
+                        ],
+                        [
+                            -78.54359287981788,
+                            -0.2839743948533176,
+                            0
+                        ],
+                        [
+                            -78.54400031530307,
+                            -0.2839512737322646,
+                            0
+                        ],
+                        [
+                            -78.5445774464985,
+                            -0.28450640610508,
+                            0
+                        ],
+                        [
+                            -78.54495974960453,
+                            -0.2850803450606638,
+                            0
+                        ],
+                        [
+                            -78.54515182824974,
+                            -0.2857109636516289,
+                            0
+                        ],
+                        [
+                            -78.54325197690542,
+                            -0.2866661564434532,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Quicentro Sur Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F13",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "012DD9D85B37C227EFB6"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.52444376786198,
+                            -0.2531159147012168,
+                            0
+                        ],
+                        [
+                            -78.52387376727744,
+                            -0.2535476402183244,
+                            0
+                        ],
+                        [
+                            -78.5222555546462,
+                            -0.2539366926378028,
+                            0
+                        ],
+                        [
+                            -78.52178413407702,
+                            -0.2522117702941998,
+                            0
+                        ],
+                        [
+                            -78.52125296514318,
+                            -0.2502764064518314,
+                            0
+                        ],
+                        [
+                            -78.52108402360749,
+                            -0.2498258106400372,
+                            0
+                        ],
+                        [
+                            -78.52150971795885,
+                            -0.2496878360889729,
+                            0
+                        ],
+                        [
+                            -78.52297775194623,
+                            -0.250008356136672,
+                            0
+                        ],
+                        [
+                            -78.52355089807973,
+                            -0.2512299419953968,
+                            0
+                        ],
+                        [
+                            -78.52416631733719,
+                            -0.25135924833203,
+                            0
+                        ],
+                        [
+                            -78.52457801287592,
+                            -0.2526190953433288,
+                            0
+                        ],
+                        [
+                            -78.52444376786198,
+                            -0.2531159147012168,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "El recreo",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F25",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "040337D95637C229C193"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.45137028545766,
+                            -0.3075842505430594,
+                            0
+                        ],
+                        [
+                            -78.45087162772225,
+                            -0.3089943497013267,
+                            0
+                        ],
+                        [
+                            -78.44839454108998,
+                            -0.3081160341326603,
+                            0
+                        ],
+                        [
+                            -78.4480534836082,
+                            -0.3075917427637422,
+                            0
+                        ],
+                        [
+                            -78.44810047924939,
+                            -0.3074612354434028,
+                            0
+                        ],
+                        [
+                            -78.44940509224749,
+                            -0.3066685844800889,
+                            0
+                        ],
+                        [
+                            -78.45000023581346,
+                            -0.3069582917750516,
+                            0
+                        ],
+                        [
+                            -78.45137028545766,
+                            -0.3075842505430594,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "San Luis Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F10",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0F84FAE9E337C22A7576"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.46067546214337,
+                            -0.2998407352304482,
+                            0
+                        ],
+                        [
+                            -78.4603709356894,
+                            -0.3001655185194859,
+                            0
+                        ],
+                        [
+                            -78.4599085286299,
+                            -0.2999136034835999,
+                            0
+                        ],
+                        [
+                            -78.46007410826539,
+                            -0.2997375354510817,
+                            0
+                        ],
+                        [
+                            -78.46025014349252,
+                            -0.2998169219970901,
+                            0
+                        ],
+                        [
+                            -78.46038143374231,
+                            -0.2996888651690509,
+                            0
+                        ],
+                        [
+                            -78.46067546214337,
+                            -0.2998407352304482,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Centro Comercial el triangulo",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F9",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "01BD0CE97E37C22B238C"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.4358958831956,
+                            -0.1999268603122543,
+                            0
+                        ],
+                        [
+                            -78.43533945504984,
+                            -0.1990232471213681,
+                            0
+                        ],
+                        [
+                            -78.4368274019501,
+                            -0.1983927954154109,
+                            0
+                        ],
+                        [
+                            -78.43716464223354,
+                            -0.1984349887651478,
+                            0
+                        ],
+                        [
+                            -78.43752900208776,
+                            -0.19924359597749,
+                            0
+                        ],
+                        [
+                            -78.4358958831956,
+                            -0.1999268603122543,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Paseo San Francisco",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F7",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0AD648A76437C22BBEEB"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.4761501650236,
+                            -0.1691392579612444,
+                            0
+                        ],
+                        [
+                            -78.4758986487617,
+                            -0.1691388135360387,
+                            0
+                        ],
+                        [
+                            -78.47498888444119,
+                            -0.1686349141226584,
+                            0
+                        ],
+                        [
+                            -78.47491375105525,
+                            -0.1677908429544644,
+                            0
+                        ],
+                        [
+                            -78.47585391055813,
+                            -0.1675339933059873,
+                            0
+                        ],
+                        [
+                            -78.4761501650236,
+                            -0.1691392579612444,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Granados plaza",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F12",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0A2E38DEA237C22DA18F"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.47670820979877,
+                            -0.1656257439636118,
+                            0
+                        ],
+                        [
+                            -78.47703728091922,
+                            -0.1671802029149857,
+                            0
+                        ],
+                        [
+                            -78.47606359153329,
+                            -0.1675233912718911,
+                            0
+                        ],
+                        [
+                            -78.47573631739847,
+                            -0.1659140344447179,
+                            0
+                        ],
+                        [
+                            -78.47670820979877,
+                            -0.1656257439636118,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Riocentro",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F5",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0E16B97DA137C22DF5E0"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.45903835919823,
+                            -0.1071212797826019,
+                            0
+                        ],
+                        [
+                            -78.45856974948325,
+                            -0.1085044020789161,
+                            0
+                        ],
+                        [
+                            -78.45812895139751,
+                            -0.1088258578176839,
+                            0
+                        ],
+                        [
+                            -78.45719421798596,
+                            -0.1087225563370262,
+                            0
+                        ],
+                        [
+                            -78.45717481946598,
+                            -0.1075259473967624,
+                            0
+                        ],
+                        [
+                            -78.45787325801172,
+                            -0.106409751816173,
+                            0
+                        ],
+                        [
+                            -78.45903835919823,
+                            -0.1071212797826019,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Portal Shopping",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F4",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0D866A355837C22E7BFC"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.49616104415588,
+                            -0.2066534097031805,
+                            0
+                        ],
+                        [
+                            -78.49585001826787,
+                            -0.2068194046919667,
+                            0
+                        ],
+                        [
+                            -78.49564945913997,
+                            -0.2065462051745274,
+                            0
+                        ],
+                        [
+                            -78.49596758558268,
+                            -0.206342478814205,
+                            0
+                        ],
+                        [
+                            -78.49616104415588,
+                            -0.2066534097031805,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Espiral",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F16",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0B26DEE44137C230781E"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.4995364686925,
+                            -0.1611715937835458,
+                            0
+                        ],
+                        [
+                            -78.4989603736039,
+                            -0.1633853528741213,
+                            0
+                        ],
+                        [
+                            -78.49642612495789,
+                            -0.1631940237112919,
+                            0
+                        ],
+                        [
+                            -78.49634749003039,
+                            -0.1629940052739207,
+                            0
+                        ],
+                        [
+                            -78.49679616608101,
+                            -0.1616356254796442,
+                            0
+                        ],
+                        [
+                            -78.49692235839206,
+                            -0.1605376514147981,
+                            0
+                        ],
+                        [
+                            -78.49717292095809,
+                            -0.1605021237172694,
+                            0
+                        ],
+                        [
+                            -78.49806027878759,
+                            -0.1606909638059633,
+                            0
+                        ],
+                        [
+                            -78.4995364686925,
+                            -0.1611715937835458,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "El Bosque",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F3",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "08AB419F5B37C2314F50"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.48058134250041,
+                            -0.1701708924137393,
+                            0
+                        ],
+                        [
+                            -78.48062628626161,
+                            -0.1706237801803011,
+                            0
+                        ],
+                        [
+                            -78.4800385664,
+                            -0.1707240378651942,
+                            0
+                        ],
+                        [
+                            -78.47995559426676,
+                            -0.1702953501627124,
+                            0
+                        ],
+                        [
+                            -78.48058134250041,
+                            -0.1701708924137393,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Centro Comercial Galería",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F2",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "040320C7FA37C231ECAC"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.47682384781204,
+                            -0.1735492044849976,
+                            0
+                        ],
+                        [
+                            -78.47711279484955,
+                            -0.1745771293191902,
+                            0
+                        ],
+                        [
+                            -78.47680878649196,
+                            -0.1746415036545604,
+                            0
+                        ],
+                        [
+                            -78.47671310945063,
+                            -0.174652868273844,
+                            0
+                        ],
+                        [
+                            -78.47643876796714,
+                            -0.1736100696775815,
+                            0
+                        ],
+                        [
+                            -78.47682384781204,
+                            -0.1735492044849976,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Centro Comercial Olimpico",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F1",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0E8052E35E37C232D2E6"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.44128513605105,
+                            -0.1961515387433726,
+                            0
+                        ],
+                        [
+                            -78.43748134272712,
+                            -0.1977240518642267,
+                            0
+                        ],
+                        [
+                            -78.43717818383513,
+                            -0.1976627498611211,
+                            0
+                        ],
+                        [
+                            -78.4370524356701,
+                            -0.1974888541019675,
+                            0
+                        ],
+                        [
+                            -78.43744697713277,
+                            -0.1972380741007368,
+                            0
+                        ],
+                        [
+                            -78.43765727922997,
+                            -0.1973034507044024,
+                            0
+                        ],
+                        [
+                            -78.44107303994656,
+                            -0.1958287035800385,
+                            0
+                        ],
+                        [
+                            -78.44128513605105,
+                            -0.1961515387433726,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Plaza Cumbaya",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F0",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "0A66FC501E37C2351A94"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.41649120698258,
+                            -0.2121500306479148,
+                            0
+                        ],
+                        [
+                            -78.41582461105747,
+                            -0.2125610600816945,
+                            0
+                        ],
+                        [
+                            -78.41485948160329,
+                            -0.2110658493679271,
+                            0
+                        ],
+                        [
+                            -78.41553961361647,
+                            -0.210618804004765,
+                            0
+                        ],
+                        [
+                            -78.41649120698258,
+                            -0.2121500306479148,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Ventura Mall",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F20",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "013DDC9BA537C236367F"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -78.49875239077126,
+                            -0.1337271522930124,
+                            0
+                        ],
+                        [
+                            -78.49874366317353,
+                            -0.1344446140961804,
+                            0
+                        ],
+                        [
+                            -78.49812828250752,
+                            -0.1344440396606154,
+                            0
+                        ],
+                        [
+                            -78.49811170777446,
+                            -0.1337071236626494,
+                            0
+                        ],
+                        [
+                            -78.49875239077126,
+                            -0.1337271522930124,
+                            0
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "Centro comercial parque ingles",
+                "styleUrl": "#__managed_style_05115D905F37C212E76F",
+                "fill-opacity": 0.25098039215686274,
+                "fill": "#ffffff",
+                "stroke-opacity": 1,
+                "stroke": "#fbc02d",
+                "stroke-width": 2.66667,
+                "icon-offset": [
+                    64,
+                    128
+                ],
+                "icon-offset-units": [
+                    "pixels",
+                    "insetPixels"
+                ],
+                "icon": "https://earth.google.com/earth/document/icon?color=1976d2&id=2000&scale=4"
+            },
+            "id": "03CAED925B37C2A6986B"
+        }
+    ]
+}

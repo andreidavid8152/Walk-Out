@@ -11,7 +11,7 @@ import itertools
 app = Flask(__name__)
 
 # ──────────────────────────── RUTAS / ARCHIVOS ────────────────────────────
-EXCEL_PATH = "data/universidades_colegios.xlsx"
+EXCEL_PATH = "data/universidades_colegios_2.xlsx"
 SHEET_UNI = "Universidades"
 SHEET_COL = "Colegios"
 CSV_EST = "data/UbicacionEstudiantesPeriodo.csv"
