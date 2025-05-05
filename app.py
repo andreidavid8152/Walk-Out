@@ -15,7 +15,7 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ──────────────────────────── RUTAS / ARCHIVOS ────────────────────────────
-EXCEL_PATH = os.path.join(BASE_DIR, "data", "universidades_colegios_2.xlsx")
+EXCEL_PATH = os.path.join(BASE_DIR, "data", "universidades_colegios.xlsx")
 SHEET_UNI = "Universidades"
 SHEET_COL = "Colegios"
 CSV_EST = os.path.join(BASE_DIR, "data", "ubicacionEstudiantesPeriodo.csv")
@@ -162,7 +162,7 @@ def mapa():
     gdf_parques = gpd.read_file(
         "data/parques.geojson"
     )  # cambia la ruta si es necesario
-    gdf_parques = gdf_parques.to_crs("EPSG:4326")  # asegurar CRS compatible
+    gdf_parques = gdf_parques.to_crs("EPSG:4326")
 
     parques_fg = folium.FeatureGroup(name="Parques").add_to(m)
 
@@ -175,7 +175,7 @@ def mapa():
             "weight": 1,
             "fillOpacity": 0.4,  # translúcido
         },
-        tooltip=folium.GeoJsonTooltip(fields=["name"], aliases=["Parque:"]),
+        tooltip=folium.GeoJsonTooltip(fields=["PRK"], aliases=["Parque:"]),
     ).add_to(parques_fg)
 
     # ---------------- Centros Comerciales (GeoJSON) ----------------
@@ -195,7 +195,6 @@ def mapa():
         },
         tooltip=folium.GeoJsonTooltip(fields=["name"], aliases=["Centro Comercial:"]),
     ).add_to(cc_fg)
-
 
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
