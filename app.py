@@ -8,6 +8,7 @@ import datetime
 from folium.plugins.treelayercontrol import TreeLayerControl
 import itertools
 import os
+from matplotlib.colors import to_rgb, to_hex
 
 app = Flask(__name__)
 
@@ -22,6 +23,13 @@ CSV_EST = os.path.join(BASE_DIR, "data", "ubicacionEstudiantesPeriodo.csv")
 GJSON_RURAL = os.path.join(BASE_DIR, "data", "parroquiasRurales.geojson")
 GJSON_URB = os.path.join(BASE_DIR, "data", "parroquiasUrbanas.geojson")
 CARRERAS_PATH = os.path.join(BASE_DIR, "data", "baseCarreras.xlsx")
+
+
+def darken_color(hex_color, factor=0.6):
+    """Oscurece un color hex por un factor dado (entre 0 y 1)."""
+    rgb = to_rgb(hex_color)
+    dark_rgb = tuple(factor * c for c in rgb)
+    return to_hex(dark_rgb)
 
 
 # ───────────────────────────────────────────────────────────────────────────
@@ -158,25 +166,41 @@ def mapa():
                 icon=folium.Icon(color=color, icon="graduation-cap", prefix="fa"),
             ).add_to(fg)
 
-    # ---------------- Parques (GeoJSON) ----------------
-    gdf_parques = gpd.read_file(
-        "data/parques.geojson"
-    )  # cambia la ruta si es necesario
-    gdf_parques = gdf_parques.to_crs("EPSG:4326")
+    # ---------------- Parques ----------------
+    gdf_parques = gpd.read_file("data/parques.geojson").to_crs("EPSG:4326")
+    gdf_parques["PRK"] = gdf_parques["PRK"].fillna("Sin nombre")
 
-    parques_fg = folium.FeatureGroup(name="Parques").add_to(m)
+    colores_parques = {
+        "Barrial": "#66c2a5",
+        "Sectorial": "#fc8d62",
+        "Zonal": "#8da0cb",
+        "Metropolitano": "#6a0dad",
+        "Menor a 300 m2": "red",
+    }
+    grupos_parques = {}  # para el overlay tree
 
-    folium.GeoJson(
-        gdf_parques,
-        name="Parques",
-        style_function=lambda feature: {
-            "fillColor": "#b266ff",  # morado claro
-            "color": "#6a0dad",  # borde morado oscuro
-            "weight": 1,
-            "fillOpacity": 0.4,  # translúcido
-        },
-        tooltip=folium.GeoJsonTooltip(fields=["PRK"], aliases=["Parque:"]),
-    ).add_to(parques_fg)
+    for categoria, subgdf in gdf_parques.groupby("d_COA"):
+        fg = folium.FeatureGroup(name=f"Parques {categoria}").add_to(m)
+        grupos_parques[categoria] = fg
+        color = colores_parques.get(categoria, "gray")
+        for _, row in subgdf.iterrows():
+            fill_col = colores_parques.get(categoria, "gray")
+            border_col = darken_color(fill_col, factor=0.6)  # oscurecer el borde
+
+            folium.GeoJson(
+                {
+                    "type": "Feature",  
+                    "geometry": row.geometry.__geo_interface__,
+                    "properties": row.drop(labels="geometry").to_dict(),
+                },
+                style_function=lambda _, fc=fill_col, bc=border_col: {
+                    "fillColor": fc,
+                    "color": bc,
+                    "weight": 1,
+                    "fillOpacity": 0.4,
+                },
+                tooltip=folium.GeoJsonTooltip(fields=["PRK"], aliases=["Parque:"]),
+            ).add_to(fg)
 
     # ---------------- Centros Comerciales (GeoJSON) ----------------
     gdf_cc = gpd.read_file("data/centros_comerciales.geojson")  # ajusta ruta si es necesario
@@ -195,6 +219,43 @@ def mapa():
         },
         tooltip=folium.GeoJsonTooltip(fields=["name"], aliases=["Centro Comercial:"]),
     ).add_to(cc_fg)
+
+    # ---------------- Plazas ----------------
+    gdf_plazas = gpd.read_file("data/plazas.geojson").to_crs("EPSG:4326")
+    gdf_plazas["NAM"] = gdf_plazas["NAM"].fillna("Sin nombre")
+    gdf_plazas["d_KCA"] = gdf_plazas["d_KCA"].fillna("Desconocido")
+
+    colores_plazas = {
+        "Plazoleta": "#00ffff",  # cyan puro
+        "Plaza": "#ff00ff",  # fucsia/neón
+        "Bulevard": "#ffff00",  # amarillo brillante
+        "Mirador": "#00ff00",  # verde fosforescente
+    }
+
+    grupos_plazas = {}
+
+    for categoria, subgdf in gdf_plazas.groupby("d_KCA"):
+        fg = folium.FeatureGroup(name=f"Plazas {categoria}").add_to(m)
+        grupos_plazas[categoria] = fg
+        color = colores_plazas.get(categoria, "gray")
+
+        for _, row in subgdf.iterrows():
+            fill_col = color
+            border_col = darken_color(fill_col, factor=0.6)
+            folium.GeoJson(
+                {
+                    "type": "Feature",
+                    "geometry": row.geometry.__geo_interface__,
+                    "properties": row.drop(labels="geometry").to_dict(),
+                },
+                style_function=lambda _, fc=fill_col, bc=border_col: {
+                    "fillColor": fc,
+                    "color": bc,
+                    "weight": 1,
+                    "fillOpacity": 0.5,
+                },
+                tooltip=folium.GeoJsonTooltip(fields=["NAM"], aliases=["Plaza:"]),
+            ).add_to(fg)
 
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
@@ -218,13 +279,21 @@ def mapa():
         },
         {
             "label": "Parques",
-            "layer": parques_fg
+            "select_all_checkbox": "Todos",
+            "children": [
+                {"label": f"Parques {cat}", "layer": layer}
+                for cat, layer in grupos_parques.items()
+            ],
         },
+        {"label": "Centros Comerciales", "layer": cc_fg},
         {
-            "label": "Centros Comerciales",
-            "layer": cc_fg
+            "label": "Plazas",
+            "select_all_checkbox": "Todas",
+            "children": [
+                {"label": f"Plazas {cat}", "layer": layer}
+                for cat, layer in grupos_plazas.items()
+            ],
         },
-
     ]
 
     TreeLayerControl(overlay_tree=overlay_tree, collapsed=False).add_to(m)
