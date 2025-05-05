@@ -202,6 +202,15 @@ def mapa():
                 tooltip=folium.GeoJsonTooltip(fields=["PRK"], aliases=["Parque:"]),
             ).add_to(fg)
 
+    # --- Marcadores de punto en el centro de cada parque ---
+    for _, row in gdf_parques.iterrows():
+        centroide = row.geometry.centroid
+        folium.Marker(
+            location=[centroide.y, centroide.x],
+            icon=folium.Icon(color="green", icon="tree", prefix="fa"),
+            tooltip=row["PRK"],
+        ).add_to(grupos_parques.get(row["d_COA"], m))
+
     # ---------------- Centros Comerciales (GeoJSON) ----------------
     gdf_cc = gpd.read_file("data/centros_comerciales.geojson")  # ajusta ruta si es necesario
     gdf_cc = gdf_cc.to_crs("EPSG:4326")
@@ -219,6 +228,15 @@ def mapa():
         },
         tooltip=folium.GeoJsonTooltip(fields=["name"], aliases=["Centro Comercial:"]),
     ).add_to(cc_fg)
+
+    # --- Marcadores de punto en el centro de cada centro comercial ---
+    for _, row in gdf_cc.iterrows():
+        centroide = row.geometry.centroid
+        folium.Marker(
+            location=[centroide.y, centroide.x],
+            icon=folium.Icon(color="black", icon="shopping-bag", prefix="fa"),
+            tooltip=row["name"],
+        ).add_to(cc_fg)
 
     # ---------------- Plazas ----------------
     gdf_plazas = gpd.read_file("data/plazas.geojson").to_crs("EPSG:4326")
@@ -256,6 +274,15 @@ def mapa():
                 },
                 tooltip=folium.GeoJsonTooltip(fields=["NAM"], aliases=["Plaza:"]),
             ).add_to(fg)
+
+        # --- Marcadores de punto en el centro de cada plaza ---
+        for _, row in gdf_plazas.iterrows():
+            centroide = row.geometry.centroid
+            folium.Marker(
+                location=[centroide.y, centroide.x],
+                icon=folium.Icon(color="darkblue", icon="square", prefix="fa"),
+                tooltip=row["NAM"],
+            ).add_to(grupos_plazas.get(row["d_KCA"], m))
 
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
