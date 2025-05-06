@@ -122,9 +122,10 @@ def mapa():
     )
     df_uni["UNIVERSIDAD"] = df_uni["UNIVERSIDAD"].str.strip()
 
-    # Carrera ↔ universidad (AÑO 2023)
+    # Carrera ↔ universidad (filtrado por periodo seleccionado)
     df_carr = pd.read_excel(CARRERAS_PATH)
-    df_carr = df_carr[df_carr["AÑO"] == 2023]
+    df_carr["PERIODO"] = df_carr["PERIODO"].astype(str)
+    df_carr = df_carr[df_carr["PERIODO"] == selected_periodo]
     uni_to_carr = df_carr.groupby("UNIVERSIDAD")["CARRERA"].apply(list).to_dict()
 
     grupo_uni_fin = {"PUBLICA": [], "PRIVADA": []}
@@ -275,14 +276,14 @@ def mapa():
                 tooltip=folium.GeoJsonTooltip(fields=["NAM"], aliases=["Plaza:"]),
             ).add_to(fg)
 
-        # --- Marcadores de punto en el centro de cada plaza ---
-        for _, row in gdf_plazas.iterrows():
+            # ✅ Aquí mismo van los marcadores, usando `subgdf` (no `gdf_plazas`)
             centroide = row.geometry.centroid
             folium.Marker(
                 location=[centroide.y, centroide.x],
                 icon=folium.Icon(color="darkblue", icon="square", prefix="fa"),
                 tooltip=row["NAM"],
-            ).add_to(grupos_plazas.get(row["d_KCA"], m))
+            ).add_to(fg)
+
 
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
@@ -333,7 +334,7 @@ def mapa():
         facultad = r["FACULTAD"].strip()
         carrera = r["CARRERA"].strip()
 
-        if facultad.upper() == "NO COMPARABLE":
+        if facultad.upper() == "SIN REGISTRO":
             continue
 
         if nivel not in facultades_por_nivel:
