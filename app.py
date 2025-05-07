@@ -125,7 +125,12 @@ def mapa():
     # Carrera ↔ universidad (filtrado por periodo seleccionado)
     df_carr = pd.read_excel(CARRERAS_PATH)
     df_carr["PERIODO"] = df_carr["PERIODO"].astype(str)
-    df_carr = df_carr[df_carr["PERIODO"] == selected_periodo]
+
+    if selected_periodo in ["202410", "202420"]:
+        df_carr = df_carr[df_carr["PERIODO"].isin([selected_periodo, "202400"])]
+    else:
+        df_carr = df_carr[df_carr["PERIODO"].isin([selected_periodo, "202520"])]
+
     uni_to_carr = df_carr.groupby("UNIVERSIDAD")["CARRERA"].apply(list).to_dict()
 
     grupo_uni_fin = {"PUBLICA": [], "PRIVADA": []}
@@ -283,7 +288,6 @@ def mapa():
                 icon=folium.Icon(color="darkblue", icon="square", prefix="fa"),
                 tooltip=row["NAM"],
             ).add_to(fg)
-
 
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
