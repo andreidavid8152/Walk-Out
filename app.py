@@ -73,7 +73,7 @@ def mapa():
     gdf_join = gpd.sjoin(gdf_est, gdf_parroquias, how="inner", predicate="within")
     conteo = gdf_join.groupby("nombre").size().reset_index(name="n_estudiantes")
     gdf_parroquias = gdf_parroquias.merge(conteo, on="nombre", how="left")
-    gdf_parroquias["n_estudiantes"].fillna(0, inplace=True)
+    gdf_parroquias["n_estudiantes"] = gdf_parroquias["n_estudiantes"].fillna(0)
     gdf_parroquias["geometry"] = gdf_parroquias["geometry"].simplify(
         0.0005, preserve_topology=True
     )
@@ -289,6 +289,36 @@ def mapa():
                 tooltip=row["NAM"],
             ).add_to(fg)
 
+    # ---------------- Espacios Culturales ----------------
+    gdf_cultura = gpd.read_file("data/espaciosCulturales.geojson").to_crs("EPSG:4326")
+    gdf_cultura["Tipos"] = gdf_cultura["Tipos"]
+    gdf_cultura["Name"] = gdf_cultura["Name"].fillna("Sin nombre")
+
+    grupos_cultura = {}
+
+    # Crear un grupo de marcadores por tipo, pero con el mismo ícono para todos
+    for tipo, subgdf in gdf_cultura.groupby("Tipos"):
+        fg = folium.FeatureGroup(name=tipo).add_to(m)
+        grupos_cultura[tipo] = fg
+
+        for _, row in subgdf.iterrows():
+            if row.geometry is None or not hasattr(row.geometry, "x"):
+                continue  # ignorar filas sin geometría válida
+
+            folium.Marker(
+                location=[row.geometry.y, row.geometry.x],
+                tooltip=row["Name"],
+                icon=folium.Icon(color="purple", icon="paint-brush", prefix="fa"),
+                popup=folium.Popup(
+                    folium.IFrame(
+                        html=f"<strong>{row['Name']}</strong><br>{row.get('descriptio', '')}",
+                        width=250,
+                        height=100,
+                    ),
+                    max_width=250,
+                ),
+            ).add_to(fg)
+
     # 8. ---------------- Árbol de capas -----------------------
     overlay_tree = [
         {
@@ -324,6 +354,14 @@ def mapa():
             "children": [
                 {"label": f"Plazas {cat}", "layer": layer}
                 for cat, layer in grupos_plazas.items()
+            ],
+        },
+        {
+            "label": "Espacios Culturales",
+            "select_all_checkbox": "Todos",
+            "children": [
+                {"label": tipo, "layer": layer}
+                for tipo, layer in grupos_cultura.items()
             ],
         },
     ]
