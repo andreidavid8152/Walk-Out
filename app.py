@@ -81,41 +81,25 @@ def mapa():
     # 4. ---------------- Mapa base ----------------------------
     m = folium.Map(location=[-0.20, -78.50], zoom_start=11, tiles="cartodbpositron")
 
-    # 5. ---------------- Parroquias agrupadas -----------------
-    bins = (
-        gdf_parroquias["n_estudiantes"]
-        .quantile([0, 1 / 3, 2 / 3, 1])
-        .round(0)
-        .astype(int)
-        .tolist()
-    )
-    gradientes = [
-        ["#deebf7", "#9ecae1", "#3182bd"],
-        ["#e5f5e0", "#a1d99b", "#31a354"],
-        ["#fff7bc", "#fec44f", "#d95f0e"],
-    ]
-    grupos_parroquia = []
-    for i in range(3):
-        lwr, upr = bins[i], bins[i + 1]
-        sub = gdf_parroquias.query("n_estudiantes >= @lwr & n_estudiantes <= @upr")
-        if sub.empty:
-            continue
-        nombre = f"Grupo {i+1}: {lwr}-{upr}"
-        fg = folium.FeatureGroup(name=nombre).add_to(m)
-        grupos_parroquia.append({"label": nombre, "layer": fg})
-        scale = cm.LinearColormap(gradientes[i], vmin=lwr, vmax=upr)
-        for _, row in sub.iterrows():
-            folium.GeoJson(
-                row.geometry,
-                style_function=lambda _, r=row, sc=scale: {
-                    "fillColor": sc(r.n_estudiantes),
-                    "color": "black",
-                    "weight": 0.2,
-                    "fillOpacity": 0.7,
-                },
-                tooltip=f"{row.nombre}: {int(row.n_estudiantes)} estudiantes",
-            ).add_to(fg)
+    # 5. ---------------- Límites de parroquias -----------------
+    fg_parroquias = folium.FeatureGroup(name="Límites de Parroquias").add_to(m)
 
+    for _, row in gdf_parroquias.iterrows():
+        folium.GeoJson(
+            {
+                "type": "Feature",
+                "geometry": row.geometry.__geo_interface__,
+                "properties": {"nombre": row["nombre"]},
+            },
+            style_function=lambda _: {
+                "fillColor": "white",
+                "color": "black",
+                "weight": 1,
+                "fillOpacity": 0.01,  # casi invisible pero capta eventos
+            },
+            tooltip=folium.GeoJsonTooltip(fields=["nombre"], aliases=["Parroquia:"]),
+        ).add_to(fg_parroquias)
+        
     # 6. ---------------- Universidades ------------------------
     df_uni = pd.read_excel(EXCEL_PATH, sheet_name=SHEET_UNI).rename(
         columns=lambda c: c.strip()
@@ -323,8 +307,7 @@ def mapa():
     overlay_tree = [
         {
             "label": "Parroquias",
-            "select_all_checkbox": "Todos",
-            "children": grupos_parroquia,
+            "layer": fg_parroquias,
         },
         {
             "label": "Universidades",
