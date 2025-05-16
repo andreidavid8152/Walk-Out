@@ -19,7 +19,9 @@ CSV_EST = os.path.join(DATA_DIR, "ubicacionEstudiantesPeriodo.csv")
 GJSON_RURAL = os.path.join(DATA_DIR, "parroquiasRurales.geojson")
 GJSON_URB = os.path.join(DATA_DIR, "parroquiasUrbanas.geojson")
 CARRERAS_PATH = os.path.join(DATA_DIR, "baseCarreras.xlsx")
-
+GJSON_BUSES = os.path.join(DATA_DIR, "estacionesBuses.geojson")
+GJSON_METRO = os.path.join(DATA_DIR, "estacionesMetro.geojson")
+GJSON_PARADAS_BUSES = os.path.join(DATA_DIR, "paradasBuses.geojson")
 
 @universidades_bp.route("/universidades")
 def mapa_universidades():
@@ -36,6 +38,9 @@ def mapa_universidades():
     # Parroquias
     gdf_rurales = gpd.read_file(GJSON_RURAL).rename(columns={"DPA_DESPAR": "nombre"})
     gdf_urbanas = gpd.read_file(GJSON_URB).rename(columns={"dpa_despar": "nombre"})
+    gdf_buses = gpd.read_file(GJSON_BUSES).to_crs("EPSG:4326")
+    gdf_metro = gpd.read_file(GJSON_METRO).to_crs("EPSG:4326")
+
     gdf_rurales["tipo"] = "rural"
     gdf_urbanas["tipo"] = "urbana"
     gdf_parroquias = pd.concat(
@@ -65,6 +70,72 @@ def mapa_universidades():
             },
             tooltip=folium.GeoJsonTooltip(fields=["nombre"], aliases=["Parroquia:"]),
         ).add_to(fg_parroquias)
+
+    # Estaciones buses
+    fg_buses = folium.FeatureGroup(name="Estaciones de Buses").add_to(m)
+
+    for _, row in gdf_buses.iterrows():
+        geom = row.geometry
+        folium.GeoJson(
+            geom.__geo_interface__,
+            style_function=lambda _: {
+                "fillColor": "orange",
+                "color": "orange",
+                "weight": 1.5,
+                "fillOpacity": 0.4,
+            },
+            tooltip="Estación de Bus",
+        ).add_to(fg_buses)
+
+        # Icono en el centro del polígono
+        centroide = geom.centroid
+        folium.Marker(
+            location=[centroide.y, centroide.x],
+            icon=folium.Icon(icon="bus", prefix="fa", color="orange"),
+            tooltip="Estación de Bus",
+        ).add_to(fg_buses)
+
+    # Estaciones metro
+    fg_metro = folium.FeatureGroup(name="Estaciones de Metro").add_to(m)
+
+    for _, row in gdf_metro.iterrows():
+        geom = row.geometry
+        nombre_estacion = f"Estación de metro: {row.get('nam', 'Desconocida')}"
+
+        folium.GeoJson(
+            geom.__geo_interface__,
+            style_function=lambda _: {
+                "fillColor": "purple",
+                "color": "purple",
+                "weight": 1.5,
+                "fillOpacity": 0.4,
+            },
+            tooltip=nombre_estacion,
+        ).add_to(fg_metro)
+
+        # Icono centrado
+        centroide = geom.centroid
+        folium.Marker(
+            location=[centroide.y, centroide.x],
+            icon=folium.Icon(icon="subway", prefix="fa", color="purple"),
+            tooltip=nombre_estacion,
+        ).add_to(fg_metro)
+
+    # Paradas de Buses (puntos)
+    gdf_paradas = gpd.read_file(GJSON_PARADAS_BUSES).to_crs("EPSG:4326")
+    fg_paradas = folium.FeatureGroup(name="Paradas de Buses").add_to(m)
+
+    for _, row in gdf_paradas.iterrows():
+        punto = row.geometry
+        folium.CircleMarker(
+            location=[punto.y, punto.x],
+            radius=4,
+            color="darkgreen",
+            fill=True,
+            fill_color="limegreen",
+            fill_opacity=0.8,
+            tooltip="Parada de Bus",
+        ).add_to(fg_paradas)
 
     # Universidades
     df_uni = pd.read_excel(EXCEL_PATH, sheet_name=SHEET_UNI).rename(
@@ -109,6 +180,14 @@ def mapa_universidades():
                 "children": [
                     {"label": "Públicas", "layer": grupo_uni_fin["PUBLICA"]},
                     {"label": "Privadas", "layer": grupo_uni_fin["PRIVADA"]},
+                ],
+            },
+            {
+                "label": "Transporte Público",
+                "children": [
+                    {"label": "Estaciones de Buses", "layer": fg_buses},
+                    {"label": "Estaciones de Metro", "layer": fg_metro},
+                    {"label": "Paradas de Buses", "layer": fg_paradas},
                 ],
             },
         ]
