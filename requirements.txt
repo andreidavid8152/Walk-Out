@@ -7,7 +7,5 @@ shapely
 gunicorn
 openpyxl
 matplotlib
-fiona
 pyproj
-rtree
 packaging
