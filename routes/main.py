@@ -90,7 +90,56 @@ def mapa():
             },
             tooltip=folium.GeoJsonTooltip(fields=["nombre"], aliases=["Parroquia:"]),
         ).add_to(fg_parroquias)
-        
+
+    # 5B. ---------------- Parroquias (Coloreo por cantidad de estudiantes) -----------------
+    fg_coloreo = folium.FeatureGroup(name="Parroquias – Estudiantes").add_to(m)
+
+    # Cuantiles para definir los tres grupos
+    bins = (
+        gdf_parroquias["n_estudiantes"]
+        .quantile([0, 1 / 3, 2 / 3, 1])
+        .round(0)
+        .astype(int)
+        .tolist()
+    )
+
+    gradientes = [
+        ["#deebf7", "#9ecae1", "#3182bd"],
+        ["#e5f5e0", "#a1d99b", "#31a354"],
+        ["#fff7bc", "#fec44f", "#d95f0e"],
+    ]
+
+    from branca.colormap import LinearColormap
+
+    for i in range(3):
+        lwr, upr = bins[i], bins[i + 1]
+        sub = gdf_parroquias.query("n_estudiantes >= @lwr and n_estudiantes <= @upr")
+        if sub.empty:
+            continue
+        scale = LinearColormap(gradientes[i], vmin=lwr, vmax=upr)
+
+        for _, row in sub.iterrows():
+            folium.GeoJson(
+                {
+                    "type": "Feature",
+                    "geometry": row.geometry.__geo_interface__,
+                    "properties": {
+                        "nombre": row["nombre"],
+                        "n_estudiantes": int(row["n_estudiantes"]),
+                    },
+                },
+                style_function=lambda _, r=row, s=scale: {
+                    "fillColor": s(r["n_estudiantes"]),
+                    "color": "gray",
+                    "weight": 0.5,
+                    "fillOpacity": 0.65,
+                },
+                tooltip=folium.GeoJsonTooltip(
+                    fields=["nombre", "n_estudiantes"],
+                    aliases=["Parroquia:", "Estudiantes:"],
+                ),
+            ).add_to(fg_coloreo)
+
     # 6. ---------------- Universidades ------------------------
     df_uni = pd.read_excel(EXCEL_PATH, sheet_name=SHEET_UNI).rename(
         columns=lambda c: c.strip()
@@ -299,6 +348,10 @@ def mapa():
         {
             "label": "Parroquias",
             "layer": fg_parroquias,
+        },
+        {
+            "label": "Densidad Parroquias",
+            "layer": fg_coloreo,
         },
         {
             "label": "Universidades",
