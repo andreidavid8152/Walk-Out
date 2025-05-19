@@ -56,6 +56,23 @@ def mapa():
         ignore_index=True,
     ).set_crs("EPSG:4326")
 
+    # 3B. ---------------- Población por parroquia ------------------
+    df_pob = pd.read_excel(os.path.join(DATA_DIR, "poblacionParroquias.xlsx"))
+    df_pob["Poblacion"] = (
+        df_pob["Poblacion"]
+        .astype(str)
+        .str.replace(",", "")
+        .astype(float)
+    )
+
+    df_pob["Parroquia"] = df_pob["Parroquia"].str.strip().str.upper()
+    gdf_parroquias["nombre_upper"] = gdf_parroquias["nombre"].str.strip().str.upper()
+
+    gdf_parroquias = gdf_parroquias.merge(
+        df_pob, left_on="nombre_upper", right_on="Parroquia", how="left"
+    )
+    gdf_parroquias["Poblacion"] = gdf_parroquias["Poblacion"].fillna(0)
+
     gdf_est = gpd.GeoDataFrame(
         df_est,
         geometry=[Point(xy) for xy in zip(df_est["Longitud"], df_est["Latitud"])],
@@ -92,7 +109,7 @@ def mapa():
         ).add_to(fg_parroquias)
 
     # 5B. ---------------- Parroquias (Coloreo por cantidad de estudiantes) -----------------
-    fg_coloreo = folium.FeatureGroup(name="Parroquias – Estudiantes").add_to(m)
+    fg_coloreo = folium.FeatureGroup(name="Parroquias – Estudiantes", show=False).add_to(m)
 
     # Cuantiles para definir los tres grupos
     bins = (
@@ -139,6 +156,54 @@ def mapa():
                     aliases=["Parroquia:", "Estudiantes:"],
                 ),
             ).add_to(fg_coloreo)
+
+    # 5C. ---------------- Parroquias (Coloreo por población) -----------------
+    fg_poblacion = folium.FeatureGroup(name="Parroquias – Población", show=False).add_to(m)
+
+    bins_pob = (
+        gdf_parroquias["Poblacion"]
+        .quantile([0, 1 / 3, 2 / 3, 1])
+        .round(0)
+        .astype(int)
+        .tolist()
+    )
+
+    gradientes_pob = [
+        ["#f2f0f7", "#cbc9e2", "#9e9ac8"],
+        ["#e7f0fa", "#c6dbef", "#6baed6"],
+        ["#fee5d9", "#fcae91", "#fb6a4a"],
+    ]
+
+    from branca.colormap import LinearColormap
+
+    for i in range(3):
+        lwr, upr = bins_pob[i], bins_pob[i + 1]
+        sub = gdf_parroquias.query("Poblacion >= @lwr and Poblacion <= @upr")
+        if sub.empty:
+            continue
+        scale = LinearColormap(gradientes_pob[i], vmin=lwr, vmax=upr)
+
+        for _, row in sub.iterrows():
+            folium.GeoJson(
+                {
+                    "type": "Feature",
+                    "geometry": row.geometry.__geo_interface__,
+                    "properties": {
+                        "nombre": row["nombre"],
+                        "poblacion": int(row["Poblacion"]),
+                    },
+                },
+                style_function=lambda _, r=row, s=scale: {
+                    "fillColor": s(r["Poblacion"]),
+                    "color": "black",
+                    "weight": 0.5,
+                    "fillOpacity": 0.6,
+                },
+                tooltip=folium.GeoJsonTooltip(
+                    fields=["nombre", "poblacion"],
+                    aliases=["Parroquia:", "Población:"],
+                ),
+            ).add_to(fg_poblacion)
 
     # 6. ---------------- Universidades ------------------------
     df_uni = pd.read_excel(EXCEL_PATH, sheet_name=SHEET_UNI).rename(
@@ -350,8 +415,12 @@ def mapa():
             "layer": fg_parroquias,
         },
         {
-            "label": "Densidad Parroquias",
+            "label": "Estudiantes Parroquias",
             "layer": fg_coloreo,
+        },
+        {
+            "label": "Población Parroquias",
+            "layer": fg_poblacion,
         },
         {
             "label": "Universidades",
