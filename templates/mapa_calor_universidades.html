@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block title %}Mapa de Calor Universidades{% endblock %}
+
+{% block content %}
+  <style>
+    /* ---- Sidebar Carreras ---- */
+    #sidebar-carreras { position:absolute; top:140px; left:10px; width:600px; z-index:1000; }
+    #sidebar-carreras .card      { max-height:80vh; overflow:hidden; box-shadow:0 0 6px rgba(0,0,0,.3); }
+    #sidebar-carreras .card-body { overflow-y:auto; max-height:calc(80vh - 56px); padding:.5rem 1rem; }
+
+    details { margin-bottom:.5rem; }
+    summary { list-style:none; cursor:pointer; display:flex; align-items:center; user-select:none; }
+    summary::-webkit-details-marker{ display:none; }
+    summary::before{ content:'▸'; width:1em; margin-right:.3em; transition:transform .2s ease; }
+    details[open]>summary::before{ transform:rotate(90deg); }
+    details ul{ list-style:none; padding-left:1.5em; margin:.3em 0; }
+    details ul li{ margin-bottom:.3em; }
+
+    #sidebar-carreras input[type="checkbox"]{ margin-right:.4em; }
+    #sidebar-carreras label{ cursor:pointer; }
+
+  </style>
+
+  <div id="top-controls">
+    <form method="get" action="/mapacalor/universidades">
+      <label for="periodo">Periodo:</label>
+      <select name="periodo" id="periodo" onchange="this.form.submit()">
+        {% for p in periodos %}
+          <option value="{{ p }}" {% if p == selected_periodo %}selected{% endif %}>{{ p }}</option>
+        {% endfor %}
+      </select>
+    </form>
+    <button type="button" class="btn btn-sm btn-outline-secondary ml-2" onclick="toggleSidebar()">Mostrar/Ocultar Filtro</button>
+  </div>
+
+  <!-- Sidebar Carreras -->
+  <div id="sidebar-carreras">
+    <div class="card">
+      <div class="card-header py-2"><strong>Carreras</strong></div>
+      <div class="card-body">
+        {% for nivel, facultades in facultades.items() %}
+          <details>
+            <summary><strong>{{ nivel.title() }}</strong></summary>
+            <div style="padding-left: 1rem;">
+              {% for fac, carreras in facultades.items() %}
+                {% set idx = loop.index0 %}
+                <details>
+                  <summary>
+                    <input type="checkbox" id="fac_{{ nivel }}_{{ idx }}" onchange="toggleChildren('fac_{{ nivel }}_{{ idx }}')">
+                    <label for="fac_{{ nivel }}_{{ idx }}">{{ fac }}</label>
+                  </summary>
+                  <ul>
+                    {% for car in carreras %}
+                    <li>
+                      <input type="checkbox" class="child" data-facultad="fac_{{ nivel }}_{{ idx }}" id="car_{{ nivel }}_{{ idx }}_{{ loop.index }}">
+                      <label for="car_{{ nivel }}_{{ idx }}_{{ loop.index }}">{{ car }}</label>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </details>
+              {% endfor %}
+            </div>
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div id="map">{{ mapa|safe }}</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function toggleChildren(facId){
+    const parentChecked = document.getElementById(facId).checked;
+    document.querySelectorAll(`input.child[data-facultad="${facId}"]`).forEach(cb => {
+      cb.checked = parentChecked;
+      cb.dispatchEvent(new Event('change'));
+    });
+  }
+
+  function selectedCareers(){
+    return Array.from(document.querySelectorAll('#sidebar-carreras input.child:checked'))
+                .map(cb => cb.nextElementSibling.textContent.trim());
+  }
+
+  function toggleDisplay(m, show){
+    const d = show ? '' : 'none';
+    if (m._icon)   m._icon.style.display   = d;
+    if (m._shadow) m._shadow.style.display = d;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const mapObj = window["{{ map_name }}"];
+    window.updateUniversityMarkers = function(){
+      const chosen = selectedCareers();
+      const visibles = [];
+      mapObj.eachLayer(l => {
+        if (l instanceof L.Marker && Array.isArray(l.options.careers)) {
+          const show = chosen.length === 0 || l.options.careers.some(c => chosen.includes(c));
+          toggleDisplay(l, show);
+          if (show) visibles.push(l.options.title || '(sin título)');
+        }
+      });
+    };
+
+    document.querySelectorAll('#sidebar-carreras input')
+            .forEach(cb => cb.addEventListener('change', updateUniversityMarkers));
+
+    updateUniversityMarkers();
+  });
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar-carreras');
+    sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,14 @@
+flask
+pandas
+geopandas
+folium
+branca
+shapely
+gunicorn
+openpyxl
+matplotlib
+fiona
+pyproj
+rtree
+packaging
+scipy

@@ -1,0 +1,1081 @@
+{
+    "splitPolicy": "esriSPTDuplicate",
+    "name": "Codigo Alimentador_49",
+    "description": "",
+    "type": "codedValue",
+    "codedValues": [
+        {
+            "code": "1400010S0A",
+            "name": "Olímpico 01A"
+        },
+        {
+            "code": "1400010S0B",
+            "name": "Olímpico 01B"
+        },
+        {
+            "code": "1400010S0C",
+            "name": "Olímpico 01C"
+        },
+        {
+            "code": "1400010S0D",
+            "name": "Olímpico 01D"
+        },
+        {
+            "code": "1400010S0E",
+            "name": "Olímpico 01E"
+        },
+        {
+            "code": "1400020S0A",
+            "name": "Luluncoto 02A"
+        },
+        {
+            "code": "1400020S0B",
+            "name": "Luluncoto 02B"
+        },
+        {
+            "code": "1400020S0C",
+            "name": "Luluncoto 02C"
+        },
+        {
+            "code": "1400020S0D",
+            "name": "Luluncoto 02D"
+        },
+        {
+            "code": "1400020S0M",
+            "name": "Luluncoto 02M"
+        },
+        {
+            "code": "1400030S0A",
+            "name": "Barrio Nuevo 03A"
+        },
+        {
+            "code": "1400030S0B",
+            "name": "Barrio Nuevo 03B"
+        },
+        {
+            "code": "1400030S0C",
+            "name": "Barrio Nuevo 03C"
+        },
+        {
+            "code": "1400030S0D",
+            "name": "Barrio Nuevo 03D"
+        },
+        {
+            "code": "1400030S0E",
+            "name": "Barrio Nuevo 03E"
+        },
+        {
+            "code": "1400030V0M",
+            "name": "Barrio Nuevo 03M"
+        },
+        {
+            "code": "1400030V0T",
+            "name": "Barrio Nuevo 03T"
+        },
+        {
+            "code": "1400040S0A",
+            "name": "Chimbacalle 04A"
+        },
+        {
+            "code": "1400040S0B",
+            "name": "Chimbacalle 04B"
+        },
+        {
+            "code": "1400040S0C",
+            "name": "Chimbacalle 04C"
+        },
+        {
+            "code": "1400040S0D",
+            "name": "Chimbacalle 04D"
+        },
+        {
+            "code": "1400040S0E",
+            "name": "Chimbacalle 04E"
+        },
+        {
+            "code": "1400040S0M",
+            "name": "Chimbacalle 04M"
+        },
+        {
+            "code": "1400060S0A",
+            "name": "Escuela Sucre 06A"
+        },
+        {
+            "code": "1400060S0B",
+            "name": "Escuela Sucre 06B"
+        },
+        {
+            "code": "1400060S0C",
+            "name": "Escuela Sucre 06C"
+        },
+        {
+            "code": "1400060S0S",
+            "name": "Escuela Sucre 06S"
+        },
+        {
+            "code": "1400060S0Z",
+            "name": "Escuela Sucre 06Z"
+        },
+        {
+            "code": "1400070S0A",
+            "name": "San Roque 07A"
+        },
+        {
+            "code": "1400070S0B",
+            "name": "San Roque 07B"
+        },
+        {
+            "code": "1400070S0C",
+            "name": "San Roque 07C"
+        },
+        {
+            "code": "1400070S0D",
+            "name": "San Roque 07D"
+        },
+        {
+            "code": "1400070S0E",
+            "name": "San Roque 07E"
+        },
+        {
+            "code": "1400070S0I",
+            "name": "San Roque 07I"
+        },
+        {
+            "code": "1400070S0J",
+            "name": "San Roque 07J"
+        },
+        {
+            "code": "1400070S0K",
+            "name": "San Roque 07K"
+        },
+        {
+            "code": "1400070S0L",
+            "name": "San Roque 07L"
+        },
+        {
+            "code": "1400070S0S",
+            "name": "San Roque 07S"
+        },
+        {
+            "code": "1400080S0A",
+            "name": "La Marín 08A"
+        },
+        {
+            "code": "1400080S0B",
+            "name": "La Marín 08B"
+        },
+        {
+            "code": "1400080S0C",
+            "name": "La Marín 08C"
+        },
+        {
+            "code": "1400080S0D",
+            "name": "La Marín 08D"
+        },
+        {
+            "code": "1400080S0M",
+            "name": "La Marín 08M"
+        },
+        {
+            "code": "1400080S0N",
+            "name": "La Marín 08N"
+        },
+        {
+            "code": "1400080S0S",
+            "name": "La Marín 08S"
+        },
+        {
+            "code": "1400090S0A",
+            "name": "Miraflores 09A"
+        },
+        {
+            "code": "1400090S0C",
+            "name": "Miraflores 09C"
+        },
+        {
+            "code": "1400090S0D",
+            "name": "Miraflores 09D"
+        },
+        {
+            "code": "1400090S0E",
+            "name": "Miraflores 09E"
+        },
+        {
+            "code": "1400100S0A",
+            "name": "Diez Vieja 10A"
+        },
+        {
+            "code": "1400100S0B",
+            "name": "Diez Vieja 10B"
+        },
+        {
+            "code": "1400100S0C",
+            "name": "Diez Vieja 10C"
+        },
+        {
+            "code": "1400100S0D",
+            "name": "Diez Vieja 10D"
+        },
+        {
+            "code": "1400110S0A",
+            "name": "Belisario Quevedo 11A"
+        },
+        {
+            "code": "1400110S0B",
+            "name": "Belisario Quevedo 11B"
+        },
+        {
+            "code": "1400110S0C",
+            "name": "Belisario Quevedo 11C"
+        },
+        {
+            "code": "1400110S0D",
+            "name": "Belisario Quevedo 11D"
+        },
+        {
+            "code": "1400110S0E",
+            "name": "Belisario Quevedo 11E"
+        },
+        {
+            "code": "1400120S0A",
+            "name": "La Floresta 12A"
+        },
+        {
+            "code": "1400120S0B",
+            "name": "La Floresta 12B"
+        },
+        {
+            "code": "1400120S0D",
+            "name": "La Floresta 12D"
+        },
+        {
+            "code": "1400130S0A",
+            "name": "Granda Centeno 13A"
+        },
+        {
+            "code": "1400130S0B",
+            "name": "Granda Centeno 13B"
+        },
+        {
+            "code": "1400130S0C",
+            "name": "Granda Centeno 13C"
+        },
+        {
+            "code": "1400130S0D",
+            "name": "Granda Centeno 13D"
+        },
+        {
+            "code": "1400130S0E",
+            "name": "Granda Centeno 13E"
+        },
+        {
+            "code": "1400130S0M",
+            "name": "Granda Centeno 13M"
+        },
+        {
+            "code": "1400150S0A",
+            "name": "El Bosque 15A"
+        },
+        {
+            "code": "1400150S0B",
+            "name": "El Bosque 15B"
+        },
+        {
+            "code": "1400150S0C",
+            "name": "El Bosque 15C"
+        },
+        {
+            "code": "1400150S0D",
+            "name": "El Bosque 15D"
+        },
+        {
+            "code": "1400150S0E",
+            "name": "El Bosque 15E"
+        },
+        {
+            "code": "1400160S0A",
+            "name": "Río Coca 16A"
+        },
+        {
+            "code": "1400160S0B",
+            "name": "Río Coca 16B"
+        },
+        {
+            "code": "1400160S0C",
+            "name": "Río Coca 16C"
+        },
+        {
+            "code": "1400160S0D",
+            "name": "Río Coca 16D"
+        },
+        {
+            "code": "1400160S0E",
+            "name": "Río Coca 16E"
+        },
+        {
+            "code": "1400160S0F",
+            "name": "Río Coca 16F"
+        },
+        {
+            "code": "1400160S0G",
+            "name": "Río Coca 16G"
+        },
+        {
+            "code": "1400160S0H",
+            "name": "Río Coca 16H"
+        },
+        {
+            "code": "1400160S0M",
+            "name": "Río Coca 16M"
+        },
+        {
+            "code": "1400170S0A",
+            "name": "Andalucía 17A"
+        },
+        {
+            "code": "1400170S0B",
+            "name": "Andalucía 17B"
+        },
+        {
+            "code": "1400170S0C",
+            "name": "Andalucía 17C"
+        },
+        {
+            "code": "1400170S0D",
+            "name": "Andalucía 17D"
+        },
+        {
+            "code": "1400170S0E",
+            "name": "Andalucía 17E"
+        },
+        {
+            "code": "1400170S0F",
+            "name": "Andalucía 17F"
+        },
+        {
+            "code": "1400170S0G",
+            "name": "Andalucía 17G"
+        },
+        {
+            "code": "1400180V0A",
+            "name": "Cristianía 18A"
+        },
+        {
+            "code": "1400180V0B",
+            "name": "Cristianía 18B"
+        },
+        {
+            "code": "1400180V0C",
+            "name": "Cristianía 18C"
+        },
+        {
+            "code": "1400180V0D",
+            "name": "Cristianía 18D"
+        },
+        {
+            "code": "1400180V0E",
+            "name": "Cristianía 18E"
+        },
+        {
+            "code": "1400180V0F",
+            "name": "Cristianía 18F"
+        },
+        {
+            "code": "1400180V0G",
+            "name": "Cristianía 18G"
+        },
+        {
+            "code": "1400190V0A",
+            "name": "Cotocollao 19A"
+        },
+        {
+            "code": "1400190V0B",
+            "name": "Cotocollao 19B"
+        },
+        {
+            "code": "1400190V0C",
+            "name": "Cotocollao 19C"
+        },
+        {
+            "code": "1400190V0D",
+            "name": "Cotocollao 19D"
+        },
+        {
+            "code": "1400190V0E",
+            "name": "Cotocollao 19E"
+        },
+        {
+            "code": "1400190V0F",
+            "name": "Cotocollao 19F"
+        },
+        {
+            "code": "1400190V0G",
+            "name": "Cotocollao 19G"
+        },
+        {
+            "code": "1400210V0A",
+            "name": "Epiclachima 21A"
+        },
+        {
+            "code": "1400210V0B",
+            "name": "Epiclachima 21B"
+        },
+        {
+            "code": "1400210V0C",
+            "name": "Epiclachima 21C"
+        },
+        {
+            "code": "1400210V0D",
+            "name": "Epiclachima 21D"
+        },
+        {
+            "code": "1400210V0E",
+            "name": "Epiclachima 21E"
+        },
+        {
+            "code": "1400210V0F",
+            "name": "Epiclachima 21F"
+        },
+        {
+            "code": "1400210V0M",
+            "name": "Epiclachima 21M"
+        },
+        {
+            "code": "1400230V0A",
+            "name": "Conocoto 23A"
+        },
+        {
+            "code": "1400230V0B",
+            "name": "Conocoto 23B"
+        },
+        {
+            "code": "1400230V0C",
+            "name": "Conocoto 23C"
+        },
+        {
+            "code": "1400230V0D",
+            "name": "Conocoto 23D"
+        },
+        {
+            "code": "1400240S0A",
+            "name": "Carolina 24A"
+        },
+        {
+            "code": "1400240S0B",
+            "name": "Carolina 24B"
+        },
+        {
+            "code": "1400240S0C",
+            "name": "Carolina 24C"
+        },
+        {
+            "code": "1400240S0D",
+            "name": "Carolina 24D"
+        },
+        {
+            "code": "1400240S0E",
+            "name": "Carolina 24E"
+        },
+        {
+            "code": "1400240S0F",
+            "name": "Carolina 24F"
+        },
+        {
+            "code": "1400240S0M",
+            "name": "Carolina 24M"
+        },
+        {
+            "code": "1400260V0B",
+            "name": "Alangasí 26B"
+        },
+        {
+            "code": "1400260V0C",
+            "name": "Alangasí 26C"
+        },
+        {
+            "code": "1400270V0A",
+            "name": "San Rafael 27A"
+        },
+        {
+            "code": "1400270V0B",
+            "name": "San Rafael 27B"
+        },
+        {
+            "code": "1400270V0C",
+            "name": "San Rafael 27C"
+        },
+        {
+            "code": "1400270V0D",
+            "name": "San Rafael 27D"
+        },
+        {
+            "code": "1400270V0F",
+            "name": "San Rafael 27F"
+        },
+        {
+            "code": "1400280S0A",
+            "name": "Iñaquito 28A"
+        },
+        {
+            "code": "1400280S0B",
+            "name": "Iñaquito 28B"
+        },
+        {
+            "code": "1400280S0C",
+            "name": "Iñaquito 28C"
+        },
+        {
+            "code": "1400280S0D",
+            "name": "Iñaquito 28D"
+        },
+        {
+            "code": "1400280S0E",
+            "name": "Iñaquito 28E"
+        },
+        {
+            "code": "1400290V0A",
+            "name": "Nueva Cumbaya 29A"
+        },
+        {
+            "code": "1400290V0B",
+            "name": "Nueva Cumbaya 29B"
+        },
+        {
+            "code": "1400290V0C",
+            "name": "Nueva Cumbaya 29C"
+        },
+        {
+            "code": "1400290V0D",
+            "name": "Nueva Cumbaya 29D"
+        },
+        {
+            "code": "1400310V0A",
+            "name": "Tababela 31A"
+        },
+        {
+            "code": "1400310V0B",
+            "name": "Tababela 31B"
+        },
+        {
+            "code": "1400310V0C",
+            "name": "Tababela 31C"
+        },
+        {
+            "code": "1400310V0D",
+            "name": "Tababela 31D"
+        },
+        {
+            "code": "1400310V0E",
+            "name": "Tababela 31E"
+        },
+        {
+            "code": "1400320S0A",
+            "name": "Diez Nueva 32A"
+        },
+        {
+            "code": "1400320S0B",
+            "name": "Diez Nueva 32B"
+        },
+        {
+            "code": "1400320S0C",
+            "name": "Diez Nueva 32C"
+        },
+        {
+            "code": "1400320S0E",
+            "name": "Diez Nueva 32E"
+        },
+        {
+            "code": "1400320S0F",
+            "name": "Diez Nueva 32F"
+        },
+        {
+            "code": "1400330V0A",
+            "name": "Nuevo Aeropuerto 33A"
+        },
+        {
+            "code": "1400330V0B",
+            "name": "Nuevo Aeropuerto 33B"
+        },
+        {
+            "code": "1400330V0D",
+            "name": "Nuevo Aeropuerto 33D"
+        },
+        {
+            "code": "1400340V0A",
+            "name": "Machachi 34A"
+        },
+        {
+            "code": "1400340V0B",
+            "name": "Machachi 34B"
+        },
+        {
+            "code": "1400340V0C",
+            "name": "Machachi 34C"
+        },
+        {
+            "code": "1400340V0D",
+            "name": "Machachi 34D"
+        },
+        {
+            "code": "1400360V0A",
+            "name": "Tumbaco 36A"
+        },
+        {
+            "code": "1400360V0B",
+            "name": "Tumbaco 36B"
+        },
+        {
+            "code": "1400360V0C",
+            "name": "Tumbaco 36C"
+        },
+        {
+            "code": "1400360V0D",
+            "name": "Tumbaco 36D"
+        },
+        {
+            "code": "1400360V0E",
+            "name": "Tumbaco 36E"
+        },
+        {
+            "code": "1400360V0F",
+            "name": "Tumbaco 36F"
+        },
+        {
+            "code": "1400360V0H",
+            "name": "Tumbaco 36H"
+        },
+        {
+            "code": "1400370V0A",
+            "name": "Santa Rosa 37A"
+        },
+        {
+            "code": "1400370V0B",
+            "name": "Santa Rosa 37B"
+        },
+        {
+            "code": "1400370V0C",
+            "name": "Santa Rosa 37C"
+        },
+        {
+            "code": "1400370V0D",
+            "name": "Santa Rosa 37D"
+        },
+        {
+            "code": "1400370V0E",
+            "name": "Santa Rosa 37E"
+        },
+        {
+            "code": "1400370V0F",
+            "name": "Santa Rosa 37F"
+        },
+        {
+            "code": "1400370V0Q",
+            "name": "Santa Rosa 37Q"
+        },
+        {
+            "code": "1400490T0A",
+            "name": "Los Bancos 49A"
+        },
+        {
+            "code": "1400490T0B",
+            "name": "Los Bancos 49B"
+        },
+        {
+            "code": "1400490T0C",
+            "name": "Los Bancos 49C"
+        },
+        {
+            "code": "1400490T0D",
+            "name": "Los Bancos 49D"
+        },
+        {
+            "code": "1400530S0A",
+            "name": "Pérez Guerrero 53A"
+        },
+        {
+            "code": "1400530S0B",
+            "name": "Pérez Guerrero 53B"
+        },
+        {
+            "code": "1400530S0C",
+            "name": "Pérez Guerrero 53C"
+        },
+        {
+            "code": "1400530S0D",
+            "name": "Pérez Guerrero 53D"
+        },
+        {
+            "code": "1400530S0E",
+            "name": "Pérez Guerrero 53E"
+        },
+        {
+            "code": "1400530S0F",
+            "name": "Pérez Guerrero 53F"
+        },
+        {
+            "code": "1400530S0M",
+            "name": "Pérez Guerrero 53M"
+        },
+        {
+            "code": "1400540V0A",
+            "name": "Papallacta 54A"
+        },
+        {
+            "code": "1400540V0B",
+            "name": "Papallacta 54B"
+        },
+        {
+            "code": "1400550V0A",
+            "name": "Sangolquí 55A"
+        },
+        {
+            "code": "1400550V0B",
+            "name": "Sangolquí 55B"
+        },
+        {
+            "code": "1400550V0C",
+            "name": "Sangolquí 55C"
+        },
+        {
+            "code": "1400550V0D",
+            "name": "Sangolquí 55D"
+        },
+        {
+            "code": "1400550V0E",
+            "name": "Sangolquí 55E"
+        },
+        {
+            "code": "1400570V0A",
+            "name": "Pomasqui 57A"
+        },
+        {
+            "code": "1400570V0B",
+            "name": "Pomasqui 57B"
+        },
+        {
+            "code": "1400570V0C",
+            "name": "Pomasqui 57C"
+        },
+        {
+            "code": "1400570V0D",
+            "name": "Pomasqui 57D"
+        },
+        {
+            "code": "1400570V0E",
+            "name": "Pomasqui 57E"
+        },
+        {
+            "code": "1400570V0F",
+            "name": "Pomasqui 57F"
+        },
+        {
+            "code": "1400570V0G",
+            "name": "Pomasqui 57G"
+        },
+        {
+            "code": "1400580V0A",
+            "name": "El Quinche 58A"
+        },
+        {
+            "code": "1400580V0B",
+            "name": "El Quinche 58B"
+        },
+        {
+            "code": "1400580V0C",
+            "name": "El Quinche 58C"
+        },
+        {
+            "code": "1400580V0D",
+            "name": "El Quinche 58D"
+        },
+        {
+            "code": "1400590V0A",
+            "name": "Eugenio Espejo 59A"
+        },
+        {
+            "code": "1400590V0B",
+            "name": "Eugenio Espejo 59B"
+        },
+        {
+            "code": "1400590V0C",
+            "name": "Eugenio Espejo 59C"
+        },
+        {
+            "code": "1400590V0D",
+            "name": "Eugenio Espejo 59D"
+        },
+        {
+            "code": "1400590V0E",
+            "name": "Eugenio Espejo 59E"
+        },
+        {
+            "code": "1400590V0F",
+            "name": "Eugenio Espejo 59F"
+        },
+        {
+            "code": "1400590V0M",
+            "name": "Eugenio Espejo 59M"
+        },
+        {
+            "code": "1400180V0H",
+            "name": "Cristianía 18H"
+        },
+        {
+            "code": "1400190V0H",
+            "name": "Cotocollao 19H"
+        },
+        {
+            "code": "1400120S0C",
+            "name": "La Floresta 12C"
+        },
+        {
+            "code": "1400050V0D",
+            "name": "Chilibulo 05D"
+        },
+        {
+            "code": "1400260V0D",
+            "name": "Alangasí 26D"
+        },
+        {
+            "code": "1400280S0H",
+            "name": "Iñaquito 28H"
+        },
+        {
+            "code": "1400220V0A",
+            "name": "San Antonio 22A"
+        },
+        {
+            "code": "1400220V0B",
+            "name": "San Antonio 22B"
+        },
+        {
+            "code": "1400220V0C",
+            "name": "San Antonio 22C"
+        },
+        {
+            "code": "1400060S0D",
+            "name": "Escuela Sucre 06D"
+        },
+        {
+            "code": "1400260V0A",
+            "name": "Alangasí 26A"
+        },
+        {
+            "code": "1400140V0A",
+            "name": "Gualo 14A"
+        },
+        {
+            "code": "1400140V0B",
+            "name": "Gualo 14B"
+        },
+        {
+            "code": "1400140V0C",
+            "name": "Gualo 14C"
+        },
+        {
+            "code": "1400140V0D",
+            "name": "Gualo 14D"
+        },
+        {
+            "code": "1400140V0E",
+            "name": "Gualo 14E"
+        },
+        {
+            "code": "1400060S0E",
+            "name": "Escuela Sucre 06E"
+        },
+        {
+            "code": "1400010V0Z",
+            "name": "Olímpico 01Z"
+        },
+        {
+            "code": "1400220V0D",
+            "name": "San Antonio 22D"
+        },
+        {
+            "code": "1400420V0A",
+            "name": "Papallacta Móvil 42A"
+        },
+        {
+            "code": "1400420V0B",
+            "name": "Papallacta Móvil 42B"
+        },
+        {
+            "code": "1400060S0G",
+            "name": "Escuela Sucre 06G"
+        },
+        {
+            "code": "1400550V0F",
+            "name": "Sangolquí 55F"
+        },
+        {
+            "code": "1400190V0I",
+            "name": "Cotocollao 19I"
+        },
+        {
+            "code": "1400550V0G",
+            "name": "Sangolquí 55G"
+        },
+        {
+            "code": "1400300V0A",
+            "name": "Plataforma Financiera 30A"
+        },
+        {
+            "code": "1400300V0B",
+            "name": "Plataforma Financiera 30B"
+        },
+        {
+            "code": "1400300V0C",
+            "name": "Plataforma Financiera 30C"
+        },
+        {
+            "code": "1400300V0D",
+            "name": "Plataforma Financiera 30D"
+        },
+        {
+            "code": "1400050V0C",
+            "name": "Chilibulo 05C"
+        },
+        {
+            "code": "1400370V0H",
+            "name": "Santa Rosa 37H"
+        },
+        {
+            "code": "1400370V0G",
+            "name": "Santa Rosa 37G"
+        },
+        {
+            "code": "1400050V0A",
+            "name": "Chilibulo 05A"
+        },
+        {
+            "code": "1400850V0A",
+            "name": "HCJB 85A"
+        },
+        {
+            "code": "1400140V0F",
+            "name": "Gualo 14F"
+        },
+        {
+            "code": "1400050VM1",
+            "name": "Chilibulo 05M1"
+        },
+        {
+            "code": "1400050VM2",
+            "name": "Chilibulo 05M2"
+        },
+        {
+            "code": "1400700V0A",
+            "name": "Movil Pifo 70A_Ingreso Primario 36C"
+        },
+        {
+            "code": "1400700V0B",
+            "name": "Movil Pifo 70B"
+        },
+        {
+            "code": "1400730V0A",
+            "name": "El Obraje 73A"
+        },
+        {
+            "code": "1400730V0B",
+            "name": "El Obraje 73B"
+        },
+        {
+            "code": "1400730V0C",
+            "name": "El Obraje 73C"
+        },
+        {
+            "code": "1400730V0D",
+            "name": "El Obraje 73D"
+        },
+        {
+            "code": "1400220V0E",
+            "name": "San Antonio 22E"
+        },
+        {
+            "code": "1400590V0G",
+            "name": "Eugenio Espejo 59G"
+        },
+        {
+            "code": "1400230V0E",
+            "name": "Conocoto 23E"
+        },
+        {
+            "code": "1400230V0F",
+            "name": "Conocoto 23F"
+        },
+        {
+            "code": "1400230V0G",
+            "name": "Conocoto 23G"
+        },
+        {
+            "code": "1400230V0H",
+            "name": "Conocoto 23H"
+        },
+        {
+            "code": "1400250V0A",
+            "name": "San Pablo 25A"
+        },
+        {
+            "code": "1400250V0B",
+            "name": "San Pablo 25B"
+        },
+        {
+            "code": "1400250VM1",
+            "name": "San Pablo 25M1"
+        },
+        {
+            "code": "1400250VM2",
+            "name": "San Pablo 25M2"
+        },
+        {
+            "code": "1400460V0A",
+            "name": "Inga Bajo 46A"
+        },
+        {
+            "code": "1400460V0B",
+            "name": "Inga Bajo 46B"
+        },
+        {
+            "code": "1400460V0C",
+            "name": "Inga Bajo 46C"
+        },
+        {
+            "code": "1400460V0D",
+            "name": "Inga Bajo 46D"
+        },
+        {
+            "code": "1400090S0B",
+            "name": "Miraflores 09B"
+        },
+        {
+            "code": "1400330V0C",
+            "name": "Nuevo Aeropuerto 33C"
+        },
+        {
+            "code": "1400050V0B",
+            "name": "Chilibulo 05B"
+        },
+        {
+            "code": "1400730V0E",
+            "name": "El Obraje 73E"
+        },
+        {
+            "code": "1400730V0F",
+            "name": "El Obraje 73F"
+        },
+        {
+            "code": "1400590VM1",
+            "name": "Eugenio Espejo 59M1"
+        },
+        {
+            "code": "1400590VM2",
+            "name": "Eugenio Espejo 59M2"
+        },
+        {
+            "code": "1400510V0A",
+            "name": "Parque Bicentenario 51A"
+        }
+    ],
+    "mergePolicy": "esriMPTDefaultValue"
+}

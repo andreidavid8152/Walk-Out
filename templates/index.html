@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Mapa de Universidades{% endblock %}
+
+{% block content %}
+  <div id="top-controls">
+    <form method="get" action="/">
+      <label for="periodo">Periodo:</label>
+      <select name="periodo" id="periodo" onchange="this.form.submit()">
+        {% for p in periodos %}
+          <option value="{{ p }}" {% if p == selected_periodo %}selected{% endif %}>{{ p }}</option>
+        {% endfor %}
+      </select>
+    </form>
+  </div>
+
+  <div id="map">{{ mapa|safe }}</div>
+{% endblock %}

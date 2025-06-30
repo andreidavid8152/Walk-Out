@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Mi aplicación Flask{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    #map {
+      width: 100%;
+      height: 90vh; /* Ocupa toda la altura de la ventana */
+      position: relative;
+    }
+
+    #top-controls {
+      top: 7rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(255, 255, 255, .9);
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    }
+
+    .leaflet-container {
+      margin-top: 6rem; /* o ajusta según la altura real de tu navbar */
+    }
+
+    .navbar .nav-link {
+      color: #ffffff; /* blanco puro */
+      font-weight: bold;
+    }
+
+    /* Estilo para cuando el mouse pasa por encima */
+    .navbar .nav-link:hover {
+      color: #a8f0a0 !important; /* un verde clarito opcional */
+    }
+
+    /* Enlace activo (ya lo tenías definido) */
+    .active-link {
+      color: #28a745 !important; /* verde */
+      font-weight: bold;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar fija en la parte superior -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'alimentadores' %}active-link{% endif %}" href="/">Alimentadores</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'colegios' %}active-link{% endif %}" href="/mapacalor/colegios">Colegios</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'empresas' %}active-link{% endif %}" href="/mapacalor/empresas">Empresas</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'estudiantes' %}active-link{% endif %}" href="/mapacalor/estudiantes">Estudiantes</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'poblacion' %}active-link{% endif %}" href="/mapacalor/poblacion-parroquias">Población parroquias</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'universidades' %}active-link{% endif %}" href="/mapacalor/universidades">Universidades</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'hospitales' %}active-link{% endif %}" href="/mapacalor/hospitales">Hospitales</a>
+        </li>        
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Contenedor general para el contenido -->
+  <div class="container-fluid">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  {% block scripts %}{% endblock %}
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mapObj = window["{{ map_name }}"];  
+
+    if (mapObj) {
+      mapObj.scrollWheelZoom.disable();  // desactiva zoom con rueda
+      mapObj.dragging.disable();         // desactiva movimiento
+      mapObj.zoomControl.remove();       // oculta botones de zoom
+    }
+  });
+</script>
+</body>
+</html>

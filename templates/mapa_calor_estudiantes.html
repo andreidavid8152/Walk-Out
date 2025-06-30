@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}Mapa de Calor – Estudiantes{% endblock %}
+
+{% block content %}
+  <!-- Selector de periodo -->
+  <div id="top-controls">
+    <form method="get" action="/mapacalor/estudiantes">
+      <label for="periodo">Periodo:</label>
+      <select name="periodo" id="periodo" onchange="this.form.submit()">
+        {% for p in periodos %}
+          <option value="{{ p }}" {% if p==selected_periodo %}selected{% endif %}>{{ p }}</option>
+        {% endfor %}
+      </select>
+      <button type="button" class="btn btn-sm btn-outline-secondary ml-2" onclick="toggleSidebar()">Mostrar/Ocultar Filtro</button>
+    </form>
+  </div>
+
+  <!-- Mapa -->
+  <div id="map">{{ mapa|safe }}</div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    function toggleChildren(facId){
+      const parentChecked = document.getElementById(facId).checked;
+      document.querySelectorAll(`input.child[data-facultad="${facId}"]`).forEach(cb => {
+        cb.checked = parentChecked;
+        cb.dispatchEvent(new Event('change'));
+      });
+    }
+
+    function selectedCareers(){
+      return Array.from(document.querySelectorAll('#sidebar-carreras input.child:checked'))
+                  .map(cb => cb.nextElementSibling.textContent.trim());
+    }
+
+    function toggleDisplay(m, show){
+      const d = show ? '' : 'none';
+      if (m._icon)   m._icon.style.display = d;
+      if (m._shadow) m._shadow.style.display = d;
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar-carreras');
+      sidebar.style.display = (sidebar.style.display === 'none') ? 'block' : 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const mapObj = window["{{ map_name }}"];
+
+      window.updateUniversityMarkers = function(){
+        const chosen = selectedCareers();
+        mapObj.eachLayer(l => {
+          if (l instanceof L.Marker && Array.isArray(l.options.careers)) {
+            const show = chosen.length === 0 || l.options.careers.some(c => chosen.includes(c));
+            toggleDisplay(l, show);
+          }
+        });
+      };
+
+      document.querySelectorAll('#sidebar-carreras input')
+              .forEach(cb => cb.addEventListener('change', updateUniversityMarkers));
+
+      updateUniversityMarkers();
+    });
+  </script>
+{% endblock %}
