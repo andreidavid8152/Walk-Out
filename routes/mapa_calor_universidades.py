@@ -235,7 +235,7 @@ def mapa():
 
     # --- 3-D. Universidades ----------------------------------------
     grupo_uni_fin = {"PUBLICA": [], "PRIVADA": []}
-    uni_to_carr = df_carr.groupby("UNIVERSIDAD")["CARRERA"].apply(list).to_dict()
+    uni_to_carr = df_carr.groupby("UNIVERSIDAD")["CARRERA UDLA"].apply(list).to_dict()
 
     for tipo in ["PUBLICA", "PRIVADA"]:
         fg_uni = folium.FeatureGroup(name=f"Universidades {tipo.title()}").add_to(m)
@@ -291,7 +291,7 @@ def mapa():
     for _, r in df_carr.iterrows():
         nivel = r["NIVEL"].strip().upper()
         facultad = r["FACULTAD"].strip()
-        carrera = r["CARRERA"].strip()
+        carrera = r["CARRERA UDLA"].strip()
 
         if facultad.upper() == "SIN REGISTRO":
             continue
