@@ -80,7 +80,10 @@
         </li>
         <li class="nav-item mx-3">
           <a class="nav-link {% if ruta_activa == 'hospitales' %}active-link{% endif %}" href="/mapacalor/hospitales">Hospitales</a>
-        </li>        
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link {% if ruta_activa == 'pobreza' %}active-link{% endif %}" href="/mapa/pobreza">Pobreza</a>
+        </li>           
       </ul>
     </div>
   </nav>
@@ -103,9 +106,9 @@
     const mapObj = window["{{ map_name }}"];  
 
     if (mapObj) {
-      mapObj.scrollWheelZoom.disable();  // desactiva zoom con rueda
-      mapObj.dragging.disable();         // desactiva movimiento
-      mapObj.zoomControl.remove();       // oculta botones de zoom
+      //mapObj.scrollWheelZoom.disable();  // desactiva zoom con rueda
+      //mapObj.dragging.disable();         // desactiva movimiento
+      //mapObj.zoomControl.remove();       // oculta botones de zoom
     }
   });
 </script>
