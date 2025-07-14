@@ -53,6 +53,22 @@ with open(ID_ALIM_JSON, encoding="utf-8") as f:
         item["code"]: item["name"] for item in json.load(f)["codedValues"]
     }
 
+# ── Colores por bloque de zona de influencia ────────────────────
+COLORES_BLOQUES = {
+    "Bloque 1": "#a2635c", ##
+    "Bloque 2": "#568d9d", ##
+    "Bloque 3": "#7d9455", ##
+    "Bloque 4": "#775277", ##
+    "Bloque 5": "#a68155", ##
+    "Bloque 6": "#a39b57",##
+    "Bloque 7": "#716f80",
+    "Bloque 8": "#a68e9b", ##
+    "Bloque 9": "#698d88",##
+    "Bloque 10": "#899a87", ##
+    "Bloque 12": "#a2a27b",##
+    "Bloque 13": "#734e73" ##
+}
+
 
 # ────────────────────────────────────────────────────────────────
 @mapa_pobreza_bp.route("/mapa/pobreza")
@@ -115,24 +131,42 @@ def mapa():
     )
 
     # 4. Mapa base Folium ────────────────────────────────────────
-    m = folium.Map(location=[-0.20, -78.50], zoom_start=11, tiles="cartodbpositron")
+    m = folium.Map(location=[-0.20, -78.50], zoom_start=11, tiles="OpenStreetMap")
+    
+    # Agregar CSS para oscurecer el mapa y hacerlo gris medio-oscuro
+    custom_css = """
+    <style>
+    .leaflet-container {
+        background-color: #474749 !important;
+    }
+    .leaflet-tile-pane {
+        filter: brightness(0.25) contrast(1.4) saturate(0.1) invert(0.1);
+    }
+    </style>
+    """
+    m.get_root().html.add_child(folium.Element(custom_css))
 
-    # 4-a. Capa Alimentadores (solo borde) -----------------------
+    # 4-a. Capa Alimentadores coloreados por bloque ---------------
     fg_alim = folium.FeatureGroup(name="Alimentadores", show=True).add_to(m)
 
     for _, row in gdf_alim.iterrows():
         nombre_alim = alimentador_nombre_map.get(
             row["alimentadorid"], row["alimentadorid"]
         )
+        
+        # Obtener color según zona de influencia (bloque)
+        zona_influencia = row.get("zonainfluencia", "")
+        color_bloque = COLORES_BLOQUES.get(zona_influencia, "#6f6f70")  # gris por defecto
+        
         folium.GeoJson(
             row.geometry.__geo_interface__,
-            style_function=lambda _: {
-                "fillColor": "#ffffff",
-                "color": "gray",
-                "weight": 0.75,
-                "fillOpacity": 0.01,
+            style_function=lambda _, color=color_bloque: {
+                "fillColor": color,
+                "color": color,
+                "weight": 1.5,
+                "fillOpacity": 0.7,
             },
-            tooltip=nombre_alim,
+            tooltip=f"{nombre_alim}<br>Zona: {zona_influencia}",
         ).add_to(fg_alim)
 
     # 4-b. Capa Parroquias coloreadas por NBI --------------------
@@ -140,7 +174,6 @@ def mapa():
 
     for _, row in gdf_parr.iterrows():
         pct = row["NBI_pct"]
-        fill_col = color_for(pct)
         pct_txt = f"{pct:.1f} %" if pd.notnull(pct) else "Sin dato"
 
         folium.GeoJson(
@@ -149,34 +182,17 @@ def mapa():
                 "geometry": row.geometry.__geo_interface__,
                 "properties": {"Parroquia": row["nombre"], "NBI_pct": pct_txt},
             },
-            style_function=lambda _, fc=fill_col: {
-                "fillColor": fc,
-                "color": "black",
-                "weight": 0.8,
-                "fillOpacity": 0.65 if fc != "#cccccc" else 0.15,
+            style_function=lambda _: {
+                "fillColor": "transparent",
+                "color": "white",
+                "weight": 1.0,
+                "fillOpacity": 0.0,
             },
             tooltip=folium.GeoJsonTooltip(
                 fields=["Parroquia", "NBI_pct"],
                 aliases=["Parroquia:", "Pobreza NBI (%):"],
             ),
         ).add_to(fg_parr)
-
-    # 5. Leyenda de rangos NBI (esquina inferior-izquierda) ------
-    legend_rows_nbi = [
-        f'<i style="background:{col};width:16px;height:16px;display:inline-block;'
-        f'margin-right:6px;border:1px solid #999"></i>{low:.1f}% – {high:.1f}%'
-        for low, high, col in RANGE_COLORS[::-1]  # alto → bajo
-    ]
-
-    legend_nbi_html = (
-        '<div style="position: fixed; bottom: 30px; left: 30px; z-index:9999;'
-        "background:white;padding:8px 10px;border:2px solid gray;border-radius:4px;"
-        'font-size:13px;line-height:18px;">'
-        "<b>Personas pobres por NBI<br>– Parroquias</b><br>"
-        + "<br>".join(legend_rows_nbi)
-        + "</div>"
-    )
-    m.get_root().html.add_child(folium.Element(legend_nbi_html))
 
     # 6. Leyenda «Alimentadores por parroquia» (inferior-derecha) --
     legend_rows_alim = [
